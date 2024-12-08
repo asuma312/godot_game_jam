@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cof22b0e0noem"]
+
+[ext_resource type="Script" path="res://obj/equipments/leg/r_white.gd" id="1_wtc07"]
+[ext_resource type="Texture2D" uid="uid://dw7askt6juydd" path="res://assets/Mech_battle/back_leg_test.png" id="2_ps6b0"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_ps6b0")
+script = ExtResource("1_wtc07")

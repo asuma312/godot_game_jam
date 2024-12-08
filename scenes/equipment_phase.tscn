@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcor6elkhd7q3"]
+
+[ext_resource type="Script" path="res://scenes/equipment_phase.gd" id="1_jhsr2"]
+[ext_resource type="PackedScene" uid="uid://bub8l46idj5c3" path="res://bodies/mc.tscn" id="2_q0ya3"]
+[ext_resource type="Texture2D" uid="uid://bryjugvphgc6n" path="res://assets/bosses/mega-man-x-video-game-capcom-boss-png-favpng-LDbDw4Sua9CF3aFYzJU8gmaBF-removebg-preview.png" id="2_r3k51"]
+
+[node name="equipment_phase" type="Node2D"]
+script = ExtResource("1_jhsr2")
+
+[node name="bg" type="Panel" parent="."]
+offset_right = 1153.0
+offset_bottom = 650.0
+
+[node name="BOSS_MENU" type="Panel" parent="bg"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 349.0
+
+[node name="ColorRect" type="ColorRect" parent="bg/BOSS_MENU"]
+modulate = Color(0.662452, 0.662452, 0.662452, 1)
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 348.0
+
+[node name="1" type="Button" parent="bg/BOSS_MENU"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 15.0
+offset_right = 109.0
+offset_bottom = 97.0
+
+[node name="EQUIPS_MENU" type="Panel" parent="bg"]
+layout_mode = 0
+offset_top = 360.0
+offset_right = 588.0
+offset_bottom = 650.0
+
+[node name="_s" type="ScrollContainer" parent="bg/EQUIPS_MENU"]
+layout_mode = 0
+offset_right = 598.0
+offset_bottom = 290.0
+horizontal_scroll_mode = 0
+
+[node name="_e" type="GridContainer" parent="bg/EQUIPS_MENU/_s"]
+layout_mode = 2
+columns = 11
+
+[node name="CHARACTER_MENU" type="Panel" parent="bg"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = 359.0
+offset_right = 1141.0
+offset_bottom = 650.0
+
+[node name="ColorRect2" type="ColorRect" parent="bg/CHARACTER_MENU"]
+modulate = Color(0.662452, 0.662452, 0.662452, 1)
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 287.0
+
+[node name="mc" parent="bg/CHARACTER_MENU" instance=ExtResource("2_q0ya3")]
+position = Vector2(240, 97)
+
+[node name="head" type="Button" parent="bg/CHARACTER_MENU"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 19.0
+offset_right = 88.0
+offset_bottom = 61.0
+
+[node name="armor" type="Button" parent="bg/CHARACTER_MENU"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 20.0
+offset_right = 443.0
+offset_bottom = 62.0
+
+[node name="l_arm" type="Button" parent="bg/CHARACTER_MENU"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 97.0
+offset_right = 90.0
+offset_bottom = 139.0
+
+[node name="r_arm" type="Button" parent="bg/CHARACTER_MENU"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 96.0
+offset_right = 440.0
+offset_bottom = 138.0
+
+[node name="l_leg" type="Button" parent="bg/CHARACTER_MENU"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 179.0
+offset_right = 89.0
+offset_bottom = 221.0
+
+[node name="r_leg" type="Button" parent="bg/CHARACTER_MENU"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 183.0
+offset_right = 440.0
+offset_bottom = 225.0
+
+[node name="attack" type="Button" parent="bg/CHARACTER_MENU"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 16.0
+offset_right = 262.0
+offset_bottom = 47.0
+text = "ATTACK"
+
+[node name="Mega-man-x-video-game-capcom-boss-png-favpng-lDbDw4Sua9cf3aFYzJu8GmaBf-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(68, 56)
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("2_r3k51")
+
+[connection signal="pressed" from="bg/CHARACTER_MENU/attack" to="." method="_on_button_pressed"]

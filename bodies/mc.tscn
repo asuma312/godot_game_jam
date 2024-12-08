@@ -1,0 +1,194 @@
+[gd_scene load_steps=9 format=3 uid="uid://bub8l46idj5c3"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_pplra"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e323a"]
+height = 66.0
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_jnndq"]
+
+[sub_resource type="Animation" id="Animation_1mbdc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("skeleton/BASE/l_arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.335124]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("skeleton/BASE/r_arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.184565]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attack_range/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xa1k3"]
+resource_name = "fix_animation"
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_jomrn"]
+resource_name = "upper_attack"
+length = 1.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("skeleton/BASE/l_arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.335124, -0.928762, -1.33463, -1.78219, -3.07821, -0.645891, -0.335124]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("skeleton/BASE/r_arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.184565, -0.691245, -1.14073, -1.72761, -3.05433, -0.402161, -0.184565]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attack_range/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mnaac"]
+_data = {
+"RESET": SubResource("Animation_1mbdc"),
+"fix_animation": SubResource("Animation_xa1k3"),
+"upper_attack": SubResource("Animation_jomrn")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_337l2"]
+
+[node name="mc" type="CharacterBody2D"]
+script = ExtResource("1_pplra")
+
+[node name="r_arm" type="Node2D" parent="."]
+position = Vector2(6.56463, 9.6955)
+rotation = -0.282829
+scale = Vector2(0.99997, 0.99997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_e323a")
+
+[node name="r_leg" type="Node2D" parent="."]
+position = Vector2(8, 37)
+
+[node name="armor" type="Node2D" parent="."]
+
+[node name="head" type="Node2D" parent="."]
+position = Vector2(6, -24)
+
+[node name="l_leg" type="Node2D" parent="."]
+position = Vector2(1, 37)
+
+[node name="l_arm" type="Node2D" parent="."]
+position = Vector2(-2.29723, 13.5805)
+rotation = -0.317671
+scale = Vector2(0.999971, 0.999971)
+
+[node name="skeleton" type="Skeleton2D" parent="."]
+position = Vector2(19.075, 11.54)
+rotation = 0.453786
+modification_stack = SubResource("SkeletonModificationStack2D_jnndq")
+
+[node name="BASE" type="Bone2D" parent="skeleton"]
+position = Vector2(-17.4033, 10.1125)
+rest = Transform2D(1, 0, 0, 1, -17.4033, 10.1125)
+
+[node name="l_arm" type="Bone2D" parent="skeleton/BASE"]
+position = Vector2(-17.2729, -17.1653)
+rotation = -0.335124
+scale = Vector2(0.999971, 0.999971)
+rest = Transform2D(0.944369, -0.328886, 0.328886, 0.944369, -17.2729, -17.1653)
+
+[node name="innerarm" type="Bone2D" parent="skeleton/BASE/l_arm"]
+position = Vector2(8.70127, 24.6838)
+rest = Transform2D(1, 0, 0, 1, 8.70127, 24.6838)
+
+[node name="hand" type="Bone2D" parent="skeleton/BASE/l_arm/innerarm"]
+position = Vector2(11.9022, 17.5596)
+rest = Transform2D(1, 0, 0, 1, 11.9022, 17.5596)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="skeleton/BASE/l_arm"]
+position = Vector2(9.44745, 22.6218)
+rotation = -0.436332
+remote_path = NodePath("../../../../l_arm")
+
+[node name="r_arm" type="Bone2D" parent="skeleton/BASE"]
+position = Vector2(-11.3756, -25.6046)
+rotation = -0.184565
+scale = Vector2(0.99997, 0.99997)
+rest = Transform2D(0.983015, -0.183518, 0.183518, 0.983015, -11.3756, -25.6046)
+
+[node name="innerarm" type="Bone2D" parent="skeleton/BASE/r_arm"]
+position = Vector2(9.5229, 21.2206)
+rotation = -0.451376
+rest = Transform2D(0.899848, -0.436204, 0.436204, 0.899848, 9.5229, 21.2206)
+
+[node name="hand" type="Bone2D" parent="skeleton/BASE/r_arm/innerarm"]
+position = Vector2(0.248569, 19.2338)
+rotation = -0.343742
+rest = Transform2D(0.9415, -0.337012, 0.337012, 0.9415, 0.248569, 19.2338)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="skeleton/BASE/r_arm"]
+position = Vector2(12.8971, 22.0605)
+rotation = -0.55205
+remote_path = NodePath("../../../../r_arm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mnaac")
+}
+
+[node name="attack_timer" type="Timer" parent="."]
+
+[node name="attack_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_range"]
+position = Vector2(31, 0)
+shape = SubResource("RectangleShape2D_337l2")
+
+[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]
+[connection signal="body_entered" from="attack_range" to="." method="_on_attack_range_body_entered"]

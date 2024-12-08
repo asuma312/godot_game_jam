@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://hph4fp2soflb"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_exyc6"]
+[ext_resource type="PackedScene" uid="uid://bcor6elkhd7q3" path="res://scenes/equipment_phase.tscn" id="2_it70e"]
+
+[node name="main" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_exyc6")
+
+[node name="equipment_phase" parent="." instance=ExtResource("2_it70e")]
