@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bub8l46idj5c3"]
+[gd_scene load_steps=8 format=3 uid="uid://bub8l46idj5c3"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_pplra"]
+[ext_resource type="Script" path="res://bodies/mc.gd" id="1_tnc54"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e323a"]
 height = 66.0
-
-[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_jnndq"]
 
 [sub_resource type="Animation" id="Animation_1mbdc"]
 length = 0.001
@@ -101,10 +99,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_337l2"]
 
 [node name="mc" type="CharacterBody2D"]
-script = ExtResource("1_pplra")
+scale = Vector2(3, 3)
+script = ExtResource("1_tnc54")
 
 [node name="r_arm" type="Node2D" parent="."]
-position = Vector2(6.56463, 9.6955)
+position = Vector2(6.56466, 9.69543)
 rotation = -0.282829
 scale = Vector2(0.99997, 0.99997)
 
@@ -124,14 +123,13 @@ position = Vector2(6, -24)
 position = Vector2(1, 37)
 
 [node name="l_arm" type="Node2D" parent="."]
-position = Vector2(-2.29723, 13.5805)
-rotation = -0.317671
+position = Vector2(-2.29724, 13.5804)
+rotation = -0.31767
 scale = Vector2(0.999971, 0.999971)
 
 [node name="skeleton" type="Skeleton2D" parent="."]
 position = Vector2(19.075, 11.54)
 rotation = 0.453786
-modification_stack = SubResource("SkeletonModificationStack2D_jnndq")
 
 [node name="BASE" type="Bone2D" parent="skeleton"]
 position = Vector2(-17.4033, 10.1125)

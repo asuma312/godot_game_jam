@@ -31,6 +31,7 @@ offset_right = 73.0
 offset_bottom = 53.0
 
 [node name="life" type="ProgressBar" parent="PLAYERSTATS_MENU/p_stats/head"]
+layout_mode = 0
 offset_left = 133.0
 offset_top = 6.0
 offset_right = 177.0
@@ -48,6 +49,7 @@ offset_right = 73.0
 offset_bottom = 53.0
 
 [node name="life" type="ProgressBar" parent="PLAYERSTATS_MENU/p_stats/armor"]
+layout_mode = 0
 offset_left = 133.0
 offset_top = 6.0
 offset_right = 177.0
@@ -65,6 +67,7 @@ offset_right = 73.0
 offset_bottom = 53.0
 
 [node name="life" type="ProgressBar" parent="PLAYERSTATS_MENU/p_stats/l_arm"]
+layout_mode = 0
 offset_left = 133.0
 offset_top = 6.0
 offset_right = 177.0
@@ -82,6 +85,7 @@ offset_right = 73.0
 offset_bottom = 53.0
 
 [node name="life" type="ProgressBar" parent="PLAYERSTATS_MENU/p_stats/r_arm"]
+layout_mode = 0
 offset_left = 133.0
 offset_top = 6.0
 offset_right = 177.0
@@ -99,6 +103,7 @@ offset_right = 73.0
 offset_bottom = 53.0
 
 [node name="life" type="ProgressBar" parent="PLAYERSTATS_MENU/p_stats/l_leg"]
+layout_mode = 0
 offset_left = 133.0
 offset_top = 6.0
 offset_right = 177.0
@@ -129,13 +134,129 @@ offset_right = 1155.0
 offset_bottom = 427.0
 
 [node name="MC_POS" type="Node2D" parent="BATTLE_MENU"]
-position = Vector2(568, 365)
+position = Vector2(410, 215)
 
 [node name="ENEMY_POS" type="Node2D" parent="BATTLE_MENU"]
-position = Vector2(529, 363)
+position = Vector2(522, 215)
 
 [node name="ENEMYSTATS_MENU" type="Panel" parent="."]
 offset_left = 253.0
 offset_top = 435.0
 offset_right = 1155.0
 offset_bottom = 649.0
+
+[node name="e_stats" type="HBoxContainer" parent="ENEMYSTATS_MENU"]
+layout_mode = 2
+offset_left = 133.0
+offset_top = 10.0
+offset_right = 898.0
+offset_bottom = 103.0
+theme_override_constants/separation = 126
+
+[node name="head" type="Panel" parent="ENEMYSTATS_MENU/e_stats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="img" type="Panel" parent="ENEMYSTATS_MENU/e_stats/head"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 73.0
+offset_bottom = 53.0
+
+[node name="life" type="ProgressBar" parent="ENEMYSTATS_MENU/e_stats/head"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 14.0
+offset_right = 125.0
+offset_bottom = 43.0
+
+[node name="armor" type="Panel" parent="ENEMYSTATS_MENU/e_stats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="img" type="Panel" parent="ENEMYSTATS_MENU/e_stats/armor"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 73.0
+offset_bottom = 53.0
+
+[node name="life" type="ProgressBar" parent="ENEMYSTATS_MENU/e_stats/armor"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 14.0
+offset_right = 125.0
+offset_bottom = 43.0
+
+[node name="l_arm" type="Panel" parent="ENEMYSTATS_MENU/e_stats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="img" type="Panel" parent="ENEMYSTATS_MENU/e_stats/l_arm"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 73.0
+offset_bottom = 53.0
+
+[node name="life" type="ProgressBar" parent="ENEMYSTATS_MENU/e_stats/l_arm"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 14.0
+offset_right = 125.0
+offset_bottom = 43.0
+
+[node name="r_arm" type="Panel" parent="ENEMYSTATS_MENU/e_stats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="img" type="Panel" parent="ENEMYSTATS_MENU/e_stats/r_arm"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 73.0
+offset_bottom = 53.0
+
+[node name="life" type="ProgressBar" parent="ENEMYSTATS_MENU/e_stats/r_arm"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 14.0
+offset_right = 125.0
+offset_bottom = 43.0
+
+[node name="l_leg" type="Panel" parent="ENEMYSTATS_MENU/e_stats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="img" type="Panel" parent="ENEMYSTATS_MENU/e_stats/l_leg"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 73.0
+offset_bottom = 53.0
+
+[node name="life" type="ProgressBar" parent="ENEMYSTATS_MENU/e_stats/l_leg"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 14.0
+offset_right = 125.0
+offset_bottom = 43.0
+
+[node name="r_leg" type="Panel" parent="ENEMYSTATS_MENU/e_stats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="img" type="Panel" parent="ENEMYSTATS_MENU/e_stats/r_leg"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 73.0
+offset_bottom = 53.0
+
+[node name="life" type="ProgressBar" parent="ENEMYSTATS_MENU/e_stats/r_leg"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 14.0
+offset_right = 125.0
+offset_bottom = 43.0

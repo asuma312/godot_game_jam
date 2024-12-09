@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnn5f5vqw2g6r"]
+
+[ext_resource type="Texture2D" uid="uid://brr174cwi6a4w" path="res://assets/purple_alien/low_purple_arm_b.png" id="1_dkh47"]
+[ext_resource type="Script" path="res://obj/equipments/arm/l_boss_1.gd" id="2_ugqc2"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_dkh47")
+script = ExtResource("2_ugqc2")

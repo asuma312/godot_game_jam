@@ -17,3 +17,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 Globals="*res://global/globals.gd"
+
+[display]
+
+window/size/extend_to_title=true

@@ -4,7 +4,8 @@ extends Node2D
 @onready var _e: GridContainer = $bg/EQUIPS_MENU/_s/_e
 @onready var character_menu: Panel = $bg/CHARACTER_MENU
 @onready var mc: CharacterBody2D = $bg/CHARACTER_MENU/mc
-@onready var boss_menu: Panel = $bg/BOSS_MENU
+@onready var boss_menu: FlowContainer = $battle_board/bosses_board/FlowContainer
+@onready var camera: Camera2D = $Camera2D
 
 
 var current_equip:Node2D
@@ -12,23 +13,35 @@ var current_bodypart:Button
 var old_equip:Node2D
 var old_equip_button:Button
 var old_pos:Vector2
+
+var camera_position:Vector2
+var old_camera_position:Vector2
+var is_moving_camera:bool = false
+var camera_move_speed = 8
+
 func _ready()->void:
 	_setup_equips_menu()
 	_setup_character_menu_buttons()
 	_setup_boss_menu()
 	parent.mc = mc
+	
 
 func _setup_boss_menu()->void:
 	for children in boss_menu.get_children():
 		if children is Button:
 			children.pressed.connect(_on_boss_button_pressed.bind(children.name))
-			
+	
+	
+	
 func _on_boss_button_pressed(boss_index):
-	parent._start_battle(str(boss_index))
+	parent._start_battle(str(boss_index))	
 
 func _process(delta: float) -> void:
 	if current_equip:
 		current_equip.global_position = get_global_mouse_position()
+	if is_moving_camera:
+		move_camera_to_position(delta)
+
 
 func _setup_equips_menu() -> void:
 	var equips_array: Array = parent.equipments
@@ -38,10 +51,10 @@ func _setup_equips_menu() -> void:
 
 		
 func _setup_single_button_equips_menu(t_button:Button,equip:Node2D)->void:
-		t_button.custom_minimum_size = Vector2(50, 50)
+		t_button.custom_minimum_size = Vector2(100, 100)
 		
 		t_button.add_child(equip)
-		
+		equip.scale = Vector2(0.08,0.08)
 		equip.position = Vector2(
 			t_button.custom_minimum_size.x / 2 - equip.position.x,
 			t_button.custom_minimum_size.y / 2 - equip.position.y
@@ -55,6 +68,7 @@ func _on_equips_menu_press_button(_base_equi,button):
 	var equipment = Globals._dup_obj(_base_equi)
 	parent.add_child(equipment)
 	current_equip = equipment
+	equipment.scale = Vector2(0.08,0.08)
 	old_equip_button = button
 	old_equip = _base_equi
 	current_equip.top_level = true
@@ -70,13 +84,13 @@ func return_equip_to_equips_menu(_body_part):
 func _on_equips_menu_let_button():
 	var body_part = detect_body_part()
 	if body_part:
-		print(body_part.name)
 		var _body_part:Button = body_part
 		var new_equip = Globals._dup_obj(current_equip)
 		if _body_part.get_children().size() > 0:
-			print("has children")
 			await return_equip_to_equips_menu(_body_part)
 		body_part.add_child(new_equip)
+		new_equip.scale = Vector2(0.08,0.08)
+
 		new_equip.global_position = _body_part.global_position + _body_part.get_rect().size / 2
 		old_equip_button.queue_free()
 		parent.equipments.erase(old_equip)
@@ -156,5 +170,23 @@ func _on_character_menu_let_button()->void:
 	current_equip = null
 
 
+
 func _on_button_pressed() -> void:
 	mc._attack()
+
+
+func _on_go_to_boss_button_pressed() -> void:
+	old_camera_position = camera.global_position
+	camera_position = Vector2(1730,326)
+	is_moving_camera = true
+
+func move_camera_to_position(delta):
+	if camera.global_position != camera_position:
+		camera.global_position = camera.global_position.lerp(camera_position, camera_move_speed * delta)
+	else:
+		is_moving_camera = false
+
+
+func _on_back_to_equps_pressed() -> void:
+	camera_position = old_camera_position
+	is_moving_camera = true

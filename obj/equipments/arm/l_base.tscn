@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj16lswe3e64c"]
+
+[ext_resource type="Texture2D" uid="uid://ctmetehia4gka" path="res://assets/Mech_battle/arm_front_test.png" id="1_j5efh"]
+[ext_resource type="Script" path="res://obj/equipments/arm/l_base.gd" id="2_vd64w"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_j5efh")
+script = ExtResource("2_vd64w")

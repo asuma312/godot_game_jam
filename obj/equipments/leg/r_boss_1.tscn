@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj028m3wk5iol"]
+
+[ext_resource type="Texture2D" uid="uid://86xt4n74ue2q" path="res://assets/purple_alien/purple_leg.png" id="1_r3l2g"]
+[ext_resource type="Script" path="res://obj/equipments/leg/r_boss_1.gd" id="2_rg2bt"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_r3l2g")
+script = ExtResource("2_rg2bt")

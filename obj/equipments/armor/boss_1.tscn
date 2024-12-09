@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c22gj7q13bl2r"]
+
+[ext_resource type="Texture2D" uid="uid://bctgi6p54ldap" path="res://assets/purple_alien/purple_torso.png" id="1_aket5"]
+[ext_resource type="Script" path="res://obj/equipments/armor/boss_1.gd" id="2_ger1n"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_aket5")
+script = ExtResource("2_ger1n")

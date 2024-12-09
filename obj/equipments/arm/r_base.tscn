@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://blqqaxrrvcak0"]
 
-[ext_resource type="Script" path="res://obj/equipments/arm/r_white.gd" id="1_lky71"]
+[ext_resource type="Script" path="res://obj/equipments/arm/r_base.gd" id="1_lky71"]
 [ext_resource type="Texture2D" uid="uid://dkv5h0pvyl1rs" path="res://assets/Mech_battle/arm_back_test.png" id="2_p6plc"]
 
 [node name="img" type="Sprite2D"]

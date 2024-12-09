@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3ypu60331mbc"]
 
-[ext_resource type="Script" path="res://obj/equipments/leg/l_white.gd" id="1_7gmjg"]
+[ext_resource type="Script" path="res://obj/equipments/leg/l_base.gd" id="1_7gmjg"]
 [ext_resource type="Texture2D" uid="uid://bptioe5x5rngs" path="res://assets/Mech_battle/front_leg_test.png" id="2_dxjgx"]
 
 [node name="img" type="Sprite2D"]

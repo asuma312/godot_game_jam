@@ -1,12 +1,12 @@
 extends Node2D
 
 var equipments = [
-	preload("res://obj/equipments/arm/l_white.tscn").instantiate(),
-	preload("res://obj/equipments/arm/r_white.tscn").instantiate(),
-	preload("res://obj/equipments/armor/white.tscn").instantiate(),
-	preload("res://obj/equipments/head/white.tscn").instantiate(),
-	preload("res://obj/equipments/leg/l_white.tscn").instantiate(),
-	preload("res://obj/equipments/leg/r_white.tscn").instantiate(),
+	preload("res://obj/equipments/arm/l_base.tscn").instantiate(),
+	preload("res://obj/equipments/arm/r_base.tscn").instantiate(),
+	preload("res://obj/equipments/armor/base.tscn").instantiate(),
+	preload("res://obj/equipments/head/base.tscn").instantiate(),
+	preload("res://obj/equipments/leg/l_base.tscn").instantiate(),
+	preload("res://obj/equipments/leg/r_base.tscn").instantiate(),
 	]
 const EQUIPMENT_PHASE = preload("res://scenes/equipment_phase.tscn")
 const BATTLE_PHASE = preload("res://scenes/battle_phase.tscn")
@@ -18,16 +18,36 @@ var equipped = {
 	"r_arm":null,
 	"r_leg":null
 }
-
+var scenes = {
+	
+}
 var mc
 
-var bosses = ["first boss"]
+var bosses = [preload("res://bodies/boss_1.tscn")]
 
 func _start_battle(boss_index):
 	var real_boss_index = int(boss_index) - 1
-	var chosen_boss = bosses[real_boss_index]
+	var chosen_boss = bosses[real_boss_index].instantiate()
 	var temp_scene = BATTLE_PHASE.instantiate()
 	temp_scene._set_mc(mc)
+	temp_scene.enemy = chosen_boss
+	scenes['start_equipment'] = get_node("equipment_phase")
+	_start_new_scene(temp_scene)
+
+func _reset_battle_phase():
+	var _battle_node = self.get_node("battle_phase")
+	if _battle_node:
+		_battle_node.queue_free()
+
+func _start_equipment():
+	_reset_battle_phase()
+	var temp_scene = EQUIPMENT_PHASE.instantiate()
+	var scene = scenes.get("start_equipment")
+	if scene:
+		_start_new_scene(scene)
+		mc._reset_equipments()
+		mc._setup_equipments()
+		return
 	_start_new_scene(temp_scene)
 
 
