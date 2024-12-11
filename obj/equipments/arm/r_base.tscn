@@ -1,9 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://blqqaxrrvcak0"]
+[gd_scene load_steps=8 format=3 uid="uid://blqqaxrrvcak0"]
 
+[ext_resource type="Texture2D" uid="uid://d0e4dobcfpdia" path="res://assets/Test/test_arm_b.png" id="1_01lwc"]
 [ext_resource type="Script" path="res://obj/equipments/arm/r_base.gd" id="1_lky71"]
-[ext_resource type="Texture2D" uid="uid://dkv5h0pvyl1rs" path="res://assets/Mech_battle/arm_back_test.png" id="2_p6plc"]
+[ext_resource type="Texture2D" uid="uid://b1frqitq3ru1g" path="res://assets/Test/Animation/arm/jab/test_jab_b0003.png" id="2_3x3cg"]
+[ext_resource type="Texture2D" uid="uid://11mawhi2w77e" path="res://assets/Test/Animation/arm/jab/test_jab_b0004.png" id="3_o740i"]
+[ext_resource type="Texture2D" uid="uid://dpels2f7b7txh" path="res://assets/Test/Animation/arm/jab/test_jab_b0005.png" id="4_ufpbt"]
+[ext_resource type="Texture2D" uid="uid://7ax3aqfbxmty" path="res://assets/Test/Animation/arm/jab/test_jab_b0006.png" id="5_xx1b0"]
 
-[node name="img" type="Sprite2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bacnc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_01lwc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3x3cg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o740i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ufpbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xx1b0")
+}],
+"loop": true,
+"name": &"jab",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"stance",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"upper",
+"speed": 5.0
+}]
+
+[node name="img" type="AnimatedSprite2D"]
 scale = Vector2(0.04, 0.04)
-texture = ExtResource("2_p6plc")
+sprite_frames = SubResource("SpriteFrames_bacnc")
+autoplay = "default"
+frame_progress = 0.576872
 script = ExtResource("1_lky71")

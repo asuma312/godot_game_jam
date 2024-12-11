@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://121al8jo5ab2"]
+
+[ext_resource type="Texture2D" uid="uid://cf8rk36h1nm3s" path="res://assets/Zangbeto/zangbeto_torso.png" id="1_7pj5v"]
+[ext_resource type="Script" path="res://obj/equipments/armor/base.gd" id="2_rllut"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_7pj5v")
+script = ExtResource("2_rllut")

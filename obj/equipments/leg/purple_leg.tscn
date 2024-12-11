@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxdyqr23rfdg3"]
+
+[ext_resource type="Texture2D" uid="uid://7vphxx2lxgt4" path="res://assets/Purplealien/purple_leg.png" id="1_8h6qq"]
+[ext_resource type="Script" path="res://obj/equipments/leg/l_base.gd" id="2_4jnlp"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_8h6qq")
+script = ExtResource("2_4jnlp")

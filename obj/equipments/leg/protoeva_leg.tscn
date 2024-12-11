@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfxfr3pyirmw2"]
+
+[ext_resource type="Texture2D" uid="uid://cpj4dkc6ntqx2" path="res://assets/Protoeva/protoeva_leg.png" id="1_tq4md"]
+[ext_resource type="Script" path="res://obj/equipments/leg/l_base.gd" id="2_33rkf"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_tq4md")
+script = ExtResource("2_33rkf")

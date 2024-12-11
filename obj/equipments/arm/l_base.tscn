@@ -1,9 +1,84 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj16lswe3e64c"]
+[gd_scene load_steps=16 format=3 uid="uid://dj16lswe3e64c"]
 
-[ext_resource type="Texture2D" uid="uid://ctmetehia4gka" path="res://assets/Mech_battle/arm_front_test.png" id="1_j5efh"]
+[ext_resource type="Texture2D" uid="uid://cqx4l0umqq7hd" path="res://assets/Test/test_arm.png" id="1_qj1l7"]
+[ext_resource type="Texture2D" uid="uid://xit3au5pjx2m" path="res://assets/Test/Animation/arm/jab/test_jab0003.png" id="2_pvndj"]
 [ext_resource type="Script" path="res://obj/equipments/arm/l_base.gd" id="2_vd64w"]
+[ext_resource type="Texture2D" uid="uid://dkmp6x8gs2wpq" path="res://assets/Test/Animation/arm/jab/test_jab0004.png" id="3_tjpow"]
+[ext_resource type="Texture2D" uid="uid://bs71hqk547q8b" path="res://assets/Test/Animation/arm/jab/test_jab0005.png" id="4_htokt"]
+[ext_resource type="Texture2D" uid="uid://d4iu0865lqjyh" path="res://assets/Test/Animation/arm/jab/test_jab0006.png" id="5_ppadx"]
+[ext_resource type="Texture2D" uid="uid://btawhn02epd7p" path="res://assets/Test/Stances/test_battle_stance_arm.png" id="6_1ekir"]
+[ext_resource type="Texture2D" uid="uid://ccn8i7g4q02m6" path="res://assets/Test/Animation/arm/upper/test_upper0000.png" id="7_758es"]
+[ext_resource type="Texture2D" uid="uid://m2qmteo3y7vg" path="res://assets/Test/Animation/arm/upper/test_upper0001.png" id="8_c0a1o"]
+[ext_resource type="Texture2D" uid="uid://bo8pjhxmwyyl6" path="res://assets/Test/Animation/arm/upper/test_upper0002.png" id="9_hkbtg"]
+[ext_resource type="Texture2D" uid="uid://nfoqovustrlq" path="res://assets/Test/Animation/arm/upper/test_upper0003.png" id="10_a0nhh"]
+[ext_resource type="Texture2D" uid="uid://dfqdixc2q7ejg" path="res://assets/Test/Animation/arm/upper/test_upper0004.png" id="11_t075f"]
+[ext_resource type="Texture2D" uid="uid://cd3115nj0dfnk" path="res://assets/Test/Animation/arm/upper/test_upper0005.png" id="12_b11bq"]
+[ext_resource type="Texture2D" uid="uid://df8nnql61ou0a" path="res://assets/Test/Animation/arm/upper/test_upper0006.png" id="13_uxco1"]
 
-[node name="img" type="Sprite2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6mw6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qj1l7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pvndj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tjpow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_htokt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ppadx")
+}],
+"loop": true,
+"name": &"jab",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1ekir")
+}],
+"loop": true,
+"name": &"stance",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_758es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c0a1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hkbtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a0nhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_t075f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_b11bq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uxco1")
+}],
+"loop": true,
+"name": &"upper",
+"speed": 5.0
+}]
+
+[node name="img" type="AnimatedSprite2D"]
 scale = Vector2(0.04, 0.04)
-texture = ExtResource("1_j5efh")
+sprite_frames = SubResource("SpriteFrames_q6mw6")
+autoplay = "default"
 script = ExtResource("2_vd64w")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4bdy6gsj53pq"]
+
+[ext_resource type="Texture2D" uid="uid://e35nrpuubafp" path="res://assets/Zangbeto/zangbeto_head.png" id="1_baowq"]
+[ext_resource type="Script" path="res://obj/equipments/head/base.gd" id="2_kxhc5"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_baowq")
+script = ExtResource("2_kxhc5")

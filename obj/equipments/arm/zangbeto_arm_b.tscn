@@ -1,0 +1,84 @@
+[gd_scene load_steps=15 format=3 uid="uid://dcpfek1u83v3l"]
+
+[ext_resource type="Texture2D" uid="uid://cx5jaaaabaou0" path="res://assets/Zangbeto/zangbeto_arm_b.png" id="1_shssj"]
+[ext_resource type="Texture2D" uid="uid://5311aw1dk52p" path="res://assets/Zangbeto/Animations/arm/jab/zangbeto_jab_b0003.png" id="2_h0hln"]
+[ext_resource type="Texture2D" uid="uid://roibv4qcoyb1" path="res://assets/Zangbeto/Animations/arm/jab/zangbeto_jab_b0004.png" id="3_usev1"]
+[ext_resource type="Texture2D" uid="uid://dkkelpt65p27" path="res://assets/Zangbeto/Animations/arm/jab/zangbeto_jab_b0005.png" id="4_cuego"]
+[ext_resource type="Texture2D" uid="uid://c2d2a13rksgp1" path="res://assets/Zangbeto/Animations/arm/jab/zangbeto_jab_b0006.png" id="5_54520"]
+[ext_resource type="Texture2D" uid="uid://dgwbqcxi627eg" path="res://assets/Zangbeto/Stances/zangbeto_battle_stance_arm_b.png" id="6_nhmjk"]
+[ext_resource type="Texture2D" uid="uid://5ktdxmmo4aur" path="res://assets/Zangbeto/Animations/arm/upper/zangbeto_upper_b0000.png" id="7_rppa2"]
+[ext_resource type="Texture2D" uid="uid://c167b18tj54u1" path="res://assets/Zangbeto/Animations/arm/upper/zangbeto_upper_b0001.png" id="8_jvqyr"]
+[ext_resource type="Texture2D" uid="uid://d2htqvkbs5m0r" path="res://assets/Zangbeto/Animations/arm/upper/zangbeto_upper_b0002.png" id="9_7xeiq"]
+[ext_resource type="Texture2D" uid="uid://dhdam5w2pp1qy" path="res://assets/Zangbeto/Animations/arm/upper/zangbeto_upper_b0003.png" id="10_jchq3"]
+[ext_resource type="Texture2D" uid="uid://b51pmfawvvemf" path="res://assets/Zangbeto/Animations/arm/upper/zangbeto_upper_b0004.png" id="11_vx7e8"]
+[ext_resource type="Texture2D" uid="uid://cob2mwg48lmum" path="res://assets/Zangbeto/Animations/arm/upper/zangbeto_upper_b0005.png" id="12_tlk8o"]
+[ext_resource type="Texture2D" uid="uid://cdl5unk0dlqe2" path="res://assets/Zangbeto/Animations/arm/upper/zangbeto_upper_b0006.png" id="13_cmi0k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7l0pa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_shssj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h0hln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_usev1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cuego")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_54520")
+}],
+"loop": true,
+"name": &"jab",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nhmjk")
+}],
+"loop": true,
+"name": &"stance",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_rppa2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jvqyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7xeiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jchq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vx7e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tlk8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cmi0k")
+}],
+"loop": true,
+"name": &"upper",
+"speed": 5.0
+}]
+
+[node name="zangbeto_arm_b" type="AnimatedSprite2D"]
+scale = Vector2(0.04, 0.04)
+sprite_frames = SubResource("SpriteFrames_7l0pa")
+animation = &"upper"
+autoplay = "default"
+frame_progress = 0.0103508
