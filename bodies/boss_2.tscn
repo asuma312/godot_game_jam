@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://l8co5wxn0bkw"]
+
+[ext_resource type="Script" path="res://bodies/boss_2.gd" id="1_lwuur"]
+[ext_resource type="PackedScene" uid="uid://dcpfek1u83v3l" path="res://obj/equipments/arm/zangbeto_arm_b.tscn" id="2_jwlx4"]
+[ext_resource type="PackedScene" uid="uid://6lcu8lfii7ol" path="res://obj/equipments/leg/zangbeto_leg_b.tscn" id="3_n7hkp"]
+[ext_resource type="PackedScene" uid="uid://121al8jo5ab2" path="res://obj/equipments/armor/zangbeto_torso.tscn" id="4_sviyf"]
+[ext_resource type="PackedScene" uid="uid://d4bdy6gsj53pq" path="res://obj/equipments/head/zangbeto_head.tscn" id="5_1b0lj"]
+[ext_resource type="PackedScene" uid="uid://bjavkvv84aob6" path="res://obj/equipments/leg/zangbeto_leg.tscn" id="6_ht356"]
+[ext_resource type="PackedScene" uid="uid://y4r4nqdpukdp" path="res://obj/equipments/arm/zangbeto_arm.tscn" id="7_0fxr2"]
+
+[sub_resource type="Animation" id="Animation_1mbdc"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_xa1k3"]
+resource_name = "fix_animation"
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_jomrn"]
+resource_name = "upper_attack"
+length = 1.1
+step = 0.1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mnaac"]
+_data = {
+"RESET": SubResource("Animation_1mbdc"),
+"fix_animation": SubResource("Animation_xa1k3"),
+"upper_attack": SubResource("Animation_jomrn")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmben"]
+height = 66.0
+
+[node name="boss_1" type="CharacterBody2D"]
+script = ExtResource("1_lwuur")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mnaac")
+}
+
+[node name="attack_timer" type="Timer" parent="."]
+
+[node name="r_arm" type="Node2D" parent="."]
+position = Vector2(-25, 24)
+
+[node name="img" parent="r_arm" instance=ExtResource("2_jwlx4")]
+position = Vector2(6, -31)
+frame_progress = 0.903516
+flip_h = true
+
+[node name="r_leg" type="Node2D" parent="."]
+position = Vector2(-32, -5)
+
+[node name="img" parent="r_leg" instance=ExtResource("3_n7hkp")]
+position = Vector2(24, 40)
+flip_h = true
+
+[node name="armor" type="Node2D" parent="."]
+
+[node name="img" parent="armor" instance=ExtResource("4_sviyf")]
+flip_h = true
+
+[node name="head" type="Node2D" parent="."]
+position = Vector2(-9, 9)
+
+[node name="img" parent="head" instance=ExtResource("5_1b0lj")]
+position = Vector2(7, -25)
+flip_h = true
+
+[node name="l_leg" type="Node2D" parent="."]
+position = Vector2(-4, 0)
+
+[node name="img" parent="l_leg" instance=ExtResource("6_ht356")]
+position = Vector2(2, 39)
+flip_h = true
+
+[node name="l_arm" type="Node2D" parent="."]
+position = Vector2(44, 21)
+rotation = -0.405486
+
+[node name="img" parent="l_arm" instance=ExtResource("7_0fxr2")]
+position = Vector2(-31.3684, -23.2599)
+rotation = 0.452449
+flip_h = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_fmben")
+
+[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

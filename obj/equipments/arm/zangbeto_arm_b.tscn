@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dcpfek1u83v3l"]
+[gd_scene load_steps=16 format=3 uid="uid://dcpfek1u83v3l"]
 
 [ext_resource type="Texture2D" uid="uid://cx5jaaaabaou0" path="res://assets/Zangbeto/zangbeto_arm_b.png" id="1_shssj"]
 [ext_resource type="Texture2D" uid="uid://5311aw1dk52p" path="res://assets/Zangbeto/Animations/arm/jab/zangbeto_jab_b0003.png" id="2_h0hln"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b51pmfawvvemf" path="res://assets/Zangbeto/Animations/arm/upper/zangbeto_upper_b0004.png" id="11_vx7e8"]
 [ext_resource type="Texture2D" uid="uid://cob2mwg48lmum" path="res://assets/Zangbeto/Animations/arm/upper/zangbeto_upper_b0005.png" id="12_tlk8o"]
 [ext_resource type="Texture2D" uid="uid://cdl5unk0dlqe2" path="res://assets/Zangbeto/Animations/arm/upper/zangbeto_upper_b0006.png" id="13_cmi0k"]
+[ext_resource type="Script" path="res://obj/equipments/arm/zangbeto_arm_b.gd" id="14_mn74l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7l0pa"]
 animations = [{
@@ -81,4 +82,5 @@ scale = Vector2(0.04, 0.04)
 sprite_frames = SubResource("SpriteFrames_7l0pa")
 animation = &"upper"
 autoplay = "default"
-frame_progress = 0.0103508
+frame_progress = 0.909148
+script = ExtResource("14_mn74l")

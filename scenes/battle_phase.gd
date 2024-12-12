@@ -9,8 +9,6 @@ var mc:CharacterBody2D
 var enemy
 
 func _ready() -> void:
-	print("ready")
-	print(enemy)
 	_setup_units()
 	first_player_stats_setup()
 	first_enemy_stats_setup()

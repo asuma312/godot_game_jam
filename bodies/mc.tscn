@@ -10,26 +10,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("skeleton/BASE/l_arm:rotation")
+tracks/0/path = NodePath("skeleton/BASE/r_arm:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.335124]
+"values": [-0.184565]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("skeleton/BASE/r_arm:rotation")
+tracks/1/path = NodePath("skeleton/BASE/l_arm:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.184565]
+"values": [-0.335124]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -55,26 +55,26 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("skeleton/BASE/l_arm:rotation")
+tracks/0/path = NodePath("skeleton/BASE/r_arm:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.9, 1, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.335124, -0.928762, -1.33463, -1.78219, -3.07821, -0.645891, -0.335124]
+"values": [-0.184565, -0.691245, -1.14073, -1.72761, -3.05433, -0.402161, -0.184565]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("skeleton/BASE/r_arm:rotation")
+tracks/1/path = NodePath("skeleton/BASE/l_arm:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.9, 1, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.184565, -0.691245, -1.14073, -1.72761, -3.05433, -0.402161, -0.184565]
+"values": [-0.335124, -0.928762, -1.33463, -1.78219, -3.07821, -0.645891, -0.335124]
 }
 tracks/2/type = "value"
 tracks/2/imported = false

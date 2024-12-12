@@ -89,13 +89,13 @@ offset_bottom = 650.0
 layout_mode = 0
 offset_left = 16.0
 offset_top = 23.0
-offset_right = 620.0
+offset_right = 626.0
 offset_bottom = 608.0
 horizontal_scroll_mode = 0
 
 [node name="_e" type="GridContainer" parent="bg/EQUIPS_MENU/_s"]
 layout_mode = 2
-columns = 11
+columns = 6
 
 [node name="go_to_boss_button" type="Button" parent="."]
 z_index = 1

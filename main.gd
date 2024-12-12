@@ -7,6 +7,8 @@ var equipments = [
 	preload("res://obj/equipments/head/base.tscn").instantiate(),
 	preload("res://obj/equipments/leg/l_base.tscn").instantiate(),
 	preload("res://obj/equipments/leg/r_base.tscn").instantiate(),
+	preload("res://obj/equipments/leg/zangbeto_leg_b.tscn").instantiate(),
+		preload("res://obj/equipments/arm/zangbeto_arm.tscn").instantiate(),
 	]
 const EQUIPMENT_PHASE = preload("res://scenes/equipment_phase.tscn")
 const BATTLE_PHASE = preload("res://scenes/battle_phase.tscn")
@@ -23,7 +25,7 @@ var scenes = {
 }
 var mc
 
-var bosses = [preload("res://bodies/boss_1.tscn")]
+var bosses = [preload("res://bodies/boss_1.tscn"),preload("res://bodies/boss_2.tscn")]
 
 func _start_battle(boss_index):
 	var real_boss_index = int(boss_index) - 1
