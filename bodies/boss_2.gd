@@ -39,7 +39,7 @@ func _ready() -> void:
 		
 	r_arm.position = b_default_position
 	l_arm.position = default_position
-	
+	_setup_bodyparts()
 
 
 		
@@ -58,17 +58,25 @@ func _on_attack_range_body_entered(body: Node2D) -> void:
 func _take_damage(damage):
 	print("took damage")
 	var choose_body_part = body_parts.pick_random()
+	print(choose_body_part)
+	if not choose_body_part:
+		return
 	var body_part = equipped[choose_body_part]
 	body_part.hp -= damage
 	if body_part.hp <= 0:
-		lose_part.emit(body_part.get_parent())
+		body_parts.erase(choose_body_part)
+		lose_part.emit(choose_body_part)
 		equipped.erase(choose_body_part)
 		return
 	took_damage.emit()
 
 
 
-	
+func _setup_bodyparts():
+	body_parts = []
+	for key in equipped:
+		if equipped[key]:
+			body_parts.append(key)
 
 func _on_l_arm_animation_changed() -> void:
 	var actual_animation = l_arm.animation

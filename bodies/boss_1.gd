@@ -1,6 +1,5 @@
 extends CharacterBody2D
 @onready var main = self.get_tree().root.get_node('main')
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var attack_timer: Timer = $attack_timer
 var damage = 1
 var body_parts:Array = ['head','l_arm','l_leg','armor','r_arm','r_leg']
@@ -21,16 +20,13 @@ var equipped = {
 
 func _ready() -> void:
 	self.scale = Vector2(3,3)
-	animated_sprite_2d.play("uppercut")
 
 
 		
 func _attack() ->void:
-	animation_player.play("upper_attack")
+	pass
 
 
-func _on_attack_timer_timeout() -> void:
-	_attack()
 
 
 func _on_attack_range_body_entered(body: Node2D) -> void:

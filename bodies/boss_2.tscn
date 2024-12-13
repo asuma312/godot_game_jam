@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://l8co5wxn0bkw"]
+[gd_scene load_steps=9 format=3 uid="uid://l8co5wxn0bkw"]
 
 [ext_resource type="Script" path="res://bodies/boss_2.gd" id="1_lwuur"]
 [ext_resource type="PackedScene" uid="uid://dcpfek1u83v3l" path="res://obj/equipments/arm/zangbeto_arm_b.tscn" id="2_jwlx4"]
@@ -8,35 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://bjavkvv84aob6" path="res://obj/equipments/leg/zangbeto_leg.tscn" id="6_ht356"]
 [ext_resource type="PackedScene" uid="uid://y4r4nqdpukdp" path="res://obj/equipments/arm/zangbeto_arm.tscn" id="7_0fxr2"]
 
-[sub_resource type="Animation" id="Animation_1mbdc"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_xa1k3"]
-resource_name = "fix_animation"
-step = 0.1
-
-[sub_resource type="Animation" id="Animation_jomrn"]
-resource_name = "upper_attack"
-length = 1.1
-step = 0.1
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mnaac"]
-_data = {
-"RESET": SubResource("Animation_1mbdc"),
-"fix_animation": SubResource("Animation_xa1k3"),
-"upper_attack": SubResource("Animation_jomrn")
-}
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmben"]
 height = 66.0
 
-[node name="boss_1" type="CharacterBody2D"]
+[node name="boss" type="CharacterBody2D"]
 script = ExtResource("1_lwuur")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_mnaac")
-}
 
 [node name="attack_timer" type="Timer" parent="."]
 

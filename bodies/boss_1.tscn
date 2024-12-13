@@ -161,7 +161,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmben"]
 height = 66.0
 
-[node name="boss_1" type="CharacterBody2D"]
+[node name="boss" type="CharacterBody2D"]
 script = ExtResource("1_f57xs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

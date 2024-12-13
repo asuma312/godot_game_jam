@@ -46,19 +46,21 @@ func _process(delta: float) -> void:
 func _setup_equips_menu() -> void:
 	var equips_array: Array = parent.equipments
 	for equip: Node2D in equips_array:
-		var t_button: Button = Button.new()
+		var t_button: Button = load("res://scenes/equipment_button.tscn").instantiate()
+		t_button.item = equip
 		_setup_single_button_equips_menu(t_button,equip)
 
 		
 func _setup_single_button_equips_menu(t_button:Button,equip:Node2D)->void:
 		t_button.custom_minimum_size = Vector2(100, 100)
-		
+		if equip.is_node_ready():
+			return
 		t_button.add_child(equip)
 		equip.scale = Vector2(0.08,0.08)
 		equip.position = Vector2(
 			t_button.custom_minimum_size.x / 2 - equip.position.x,
 			t_button.custom_minimum_size.y / 2 - equip.position.y
-		)		
+		)
 		_e.add_child(t_button)
 		t_button.button_down.connect(_on_equips_menu_press_button.bind(equip,t_button))
 		t_button.button_up.connect(_on_equips_menu_let_button)
@@ -88,11 +90,14 @@ func _on_equips_menu_let_button():
 		var new_equip = Globals._dup_obj(current_equip)
 		if _body_part.get_children().size() > 0:
 			await return_equip_to_equips_menu(_body_part)
+		var _mc_body_part = mc.get_node(str(body_part.name))
+		for children in _mc_body_part.get_children():
+			_mc_body_part.remove_child(children)
 		body_part.add_child(new_equip)
 		new_equip.scale = Vector2(0.08,0.08)
-
 		new_equip.global_position = _body_part.global_position + _body_part.get_rect().size / 2
 		old_equip_button.queue_free()
+
 		parent.equipments.erase(old_equip)
 		parent.equipped[body_part.name] = new_equip
 		mc._setup_equipments()
@@ -160,6 +165,7 @@ func _on_character_menu_let_button()->void:
 			current_equip = null
 			return
 	if not current_bodypart:return
+	var old_equips = null
 	parent.equipped[current_bodypart.name] = null
 	var button = Button.new()
 	var new_equip = Globals._dup_obj(current_equip)

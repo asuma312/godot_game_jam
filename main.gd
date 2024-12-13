@@ -24,7 +24,7 @@ var scenes = {
 	
 }
 var mc
-
+var enemy
 var bosses = [preload("res://bodies/boss_1.tscn"),preload("res://bodies/boss_2.tscn")]
 
 func _start_battle(boss_index):
@@ -34,6 +34,7 @@ func _start_battle(boss_index):
 	temp_scene._set_mc(mc)
 	temp_scene.enemy = chosen_boss
 	scenes['start_equipment'] = get_node("equipment_phase")
+	enemy = chosen_boss
 	_start_new_scene(temp_scene)
 
 func _reset_battle_phase():
@@ -43,9 +44,11 @@ func _reset_battle_phase():
 
 func _start_equipment():
 	_reset_battle_phase()
+	
 	var temp_scene = EQUIPMENT_PHASE.instantiate()
 	var scene = scenes.get("start_equipment")
 	if scene:
+		scene._setup_equips_menu()
 		_start_new_scene(scene)
 		mc._reset_equipments()
 		mc._setup_equipments()

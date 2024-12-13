@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://blqqaxrrvcak0"]
+[gd_scene load_steps=20 format=3 uid="uid://blqqaxrrvcak0"]
 
 [ext_resource type="Texture2D" uid="uid://d0e4dobcfpdia" path="res://assets/Test/test_arm_b.png" id="1_01lwc"]
 [ext_resource type="Script" path="res://obj/equipments/arm/r_base.gd" id="1_lky71"]
@@ -6,6 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://11mawhi2w77e" path="res://assets/Test/Animation/arm/jab/test_jab_b0004.png" id="3_o740i"]
 [ext_resource type="Texture2D" uid="uid://dpels2f7b7txh" path="res://assets/Test/Animation/arm/jab/test_jab_b0005.png" id="4_ufpbt"]
 [ext_resource type="Texture2D" uid="uid://7ax3aqfbxmty" path="res://assets/Test/Animation/arm/jab/test_jab_b0006.png" id="5_xx1b0"]
+[ext_resource type="Texture2D" uid="uid://c1tn6lb0t45br" path="res://assets/Test/Animation/arm/upper/test_upper_b0000.png" id="6_00433"]
+[ext_resource type="Texture2D" uid="uid://d3pwc6c4tr0el" path="res://assets/Test/Animation/arm/upper/test_upper_b0001.png" id="7_54tc1"]
+[ext_resource type="Texture2D" uid="uid://duy7chv0xqu73" path="res://assets/Test/Animation/arm/upper/test_upper_b0002.png" id="8_ldg1o"]
+[ext_resource type="Texture2D" uid="uid://biplnx70k68do" path="res://assets/Test/Animation/arm/upper/test_upper_b0003.png" id="9_4717v"]
+[ext_resource type="Texture2D" uid="uid://d1ule4ofgailc" path="res://assets/Test/Animation/arm/upper/test_upper_b0004.png" id="10_70bfb"]
+[ext_resource type="Texture2D" uid="uid://dwd5202gxad7k" path="res://assets/Test/Animation/arm/upper/test_upper_b0005.png" id="11_8cy1a"]
+[ext_resource type="Texture2D" uid="uid://cfpo335u17bdr" path="res://assets/Test/Animation/arm/upper/test_upper_b0006.png" id="12_yx6xv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bacnc"]
 animations = [{
@@ -39,15 +46,188 @@ animations = [{
 "name": &"stance",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_00433")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_54tc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ldg1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4717v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_70bfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8cy1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yx6xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_00433")
+}],
 "loop": true,
-"name": &"upper",
+"name": &"uppercut",
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_6dy63"]
+resource_name = "jab"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(35, -15)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jab"]
+}
+
+[sub_resource type="Animation" id="Animation_iep8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(18, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jab"]
+}
+
+[sub_resource type="Animation" id="Animation_rc8rr"]
+resource_name = "stop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 19)]
+}
+
+[sub_resource type="Animation" id="Animation_ot2r1"]
+resource_name = "uppercut"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(35, -15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"uppercut"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f2kac"]
+_data = {
+"RESET": SubResource("Animation_iep8a"),
+"jab": SubResource("Animation_6dy63"),
+"stop": SubResource("Animation_rc8rr"),
+"uppercut": SubResource("Animation_ot2r1")
+}
+
 [node name="img" type="AnimatedSprite2D"]
+position = Vector2(18, 1)
 scale = Vector2(0.04, 0.04)
 sprite_frames = SubResource("SpriteFrames_bacnc")
+animation = &"jab"
 autoplay = "default"
-frame_progress = 0.576872
 script = ExtResource("1_lky71")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f2kac")
+}

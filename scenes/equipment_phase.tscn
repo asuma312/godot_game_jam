@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b6veqb413ajxl" path="res://assets/Ui/Extra/blue_print.png" id="3_j16kp"]
 [ext_resource type="Texture2D" uid="uid://bbiwfgat37y4d" path="res://assets/Ui/Buttons/button_fight.png" id="4_7swet"]
 [ext_resource type="Texture2D" uid="uid://sbj5qwar0r0" path="res://assets/Ui/Buttons/button_fight_pressed.png" id="5_bgq1x"]
+[ext_resource type="Texture2D" uid="uid://o87ajonjb8ho" path="res://assets/Ui/Portraits/purplealien_portrait.png" id="7_i88ky"]
 [ext_resource type="Texture2D" uid="uid://dqvku0v25mxyy" path="res://assets/Ui/Buttons/button_equip.png" id="7_khlt2"]
 [ext_resource type="Texture2D" uid="uid://cvy1eqs8yd0l4" path="res://assets/Ui/Portraits/zangbeto_portrait.png" id="7_tvb7t"]
 [ext_resource type="Texture2D" uid="uid://bcn30ret3wlwh" path="res://assets/Ui/Buttons/button_equip_pressed.png" id="8_bp70t"]
@@ -22,9 +23,6 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekqlx"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_scq8l"]
-texture = ExtResource("7_tvb7t")
 
 [node name="equipment_phase" type="Node2D"]
 script = ExtResource("1_jhsr2")
@@ -112,40 +110,33 @@ offset_bottom = 201.0
 text = "RIGHT
 LEG"
 
-[node name="attack" type="Button" parent="bg/CHARACTER_MENU"]
-layout_mode = 0
-offset_left = 225.0
-offset_top = -314.0
-offset_right = 293.0
-offset_bottom = -283.0
-text = "ATTACK"
-
 [node name="EQUIPS_MENU" type="Panel" parent="bg"]
 layout_mode = 0
-offset_top = 2.0
+offset_left = 83.0
+offset_top = 146.0
 offset_right = 631.0
 offset_bottom = 650.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qr1kq")
 
 [node name="_s" type="ScrollContainer" parent="bg/EQUIPS_MENU"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 131.0
-offset_right = 626.0
-offset_bottom = 608.0
+offset_left = -35.0
+offset_top = 1.0
+offset_right = 521.0
+offset_bottom = 478.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b5sy7")
 horizontal_scroll_mode = 0
 
 [node name="_e" type="GridContainer" parent="bg/EQUIPS_MENU/_s"]
 layout_mode = 2
-columns = 6
+columns = 4
 
 [node name="go_to_boss_button" type="TextureButton" parent="."]
 z_index = 1
-offset_left = 920.0
-offset_top = 505.0
-offset_right = 1432.0
-offset_bottom = 705.0
+offset_left = 820.0
+offset_top = 525.0
+offset_right = 1332.0
+offset_bottom = 725.0
 rotation = 0.20944
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("4_7swet")
@@ -165,19 +156,21 @@ layout_mode = 0
 offset_left = 158.0
 offset_top = 102.0
 offset_right = 1029.0
-offset_bottom = 953.0
+offset_bottom = 630.0
 theme_override_constants/h_separation = 35
 theme_override_constants/v_separation = 18
 
 [node name="1" type="Button" parent="battle_board/bosses_board/FlowContainer"]
 custom_minimum_size = Vector2(187, 212)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_scq8l")
+icon = ExtResource("7_i88ky")
+expand_icon = true
 
 [node name="2" type="Button" parent="battle_board/bosses_board/FlowContainer"]
 custom_minimum_size = Vector2(187, 212)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_scq8l")
+icon = ExtResource("7_tvb7t")
+expand_icon = true
 
 [node name="back_to_equps" type="TextureButton" parent="."]
 z_index = 1
@@ -208,6 +201,5 @@ scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("11_5ssag")
 texture_pressed = ExtResource("12_8grwf")
 
-[connection signal="pressed" from="bg/CHARACTER_MENU/attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="go_to_boss_button" to="." method="_on_go_to_boss_button_pressed"]
 [connection signal="pressed" from="back_to_equps" to="." method="_on_back_to_equps_pressed"]

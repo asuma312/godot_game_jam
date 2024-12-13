@@ -1,0 +1,104 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct7gf7ayq07wa"]
+
+[ext_resource type="Script" path="res://scenes/popups.gd" id="1_jl2ja"]
+
+[node name="Popups" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jl2ja")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ItemPopUp" type="PopupPanel" parent="UI"]
+unique_name_in_owner = true
+position = Vector2i(526, 274)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ItemPopUp"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 107.0
+
+[node name="NAME" type="Label" parent="UI/ItemPopUp/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "NAME"
+
+[node name="ATT1" type="HBoxContainer" parent="UI/ItemPopUp/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="LABEL" type="Label" parent="UI/ItemPopUp/VBoxContainer/ATT1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DESC"
+
+[node name="VALUE" type="Label" parent="UI/ItemPopUp/VBoxContainer/ATT1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DESC"
+
+[node name="ATT2" type="HBoxContainer" parent="UI/ItemPopUp/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="LABEL" type="Label" parent="UI/ItemPopUp/VBoxContainer/ATT2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DESC"
+
+[node name="VALUE" type="Label" parent="UI/ItemPopUp/VBoxContainer/ATT2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DESC"
+
+[node name="ATT3" type="HBoxContainer" parent="UI/ItemPopUp/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="LABEL" type="Label" parent="UI/ItemPopUp/VBoxContainer/ATT3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DESC"
+
+[node name="VALUE" type="Label" parent="UI/ItemPopUp/VBoxContainer/ATT3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DESC"
+
+[node name="ATT4" type="HBoxContainer" parent="UI/ItemPopUp/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="LABEL" type="Label" parent="UI/ItemPopUp/VBoxContainer/ATT4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DESC"
+
+[node name="VALUE" type="Label" parent="UI/ItemPopUp/VBoxContainer/ATT4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DESC"
+
+[node name="ATT5" type="HBoxContainer" parent="UI/ItemPopUp/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="LABEL" type="Label" parent="UI/ItemPopUp/VBoxContainer/ATT5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DESC"
+
+[node name="VALUE" type="Label" parent="UI/ItemPopUp/VBoxContainer/ATT5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DESC"
