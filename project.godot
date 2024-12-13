@@ -21,3 +21,4 @@ Globals="*res://global/globals.gd"
 [display]
 
 window/size/extend_to_title=true
+window/stretch/mode="viewport"

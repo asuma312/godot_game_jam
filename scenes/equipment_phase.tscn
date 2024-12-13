@@ -1,15 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcor6elkhd7q3"]
+[gd_scene load_steps=18 format=3 uid="uid://bcor6elkhd7q3"]
 
 [ext_resource type="Script" path="res://scenes/equipment_phase.gd" id="1_jhsr2"]
 [ext_resource type="PackedScene" uid="uid://bub8l46idj5c3" path="res://bodies/mc.tscn" id="2_q0ya3"]
-[ext_resource type="Texture2D" uid="uid://bryjugvphgc6n" path="res://assets/bosses/mega-man-x-video-game-capcom-boss-png-favpng-LDbDw4Sua9CF3aFYzJU8gmaBF-removebg-preview.png" id="2_r3k51"]
+[ext_resource type="Texture2D" uid="uid://bbb05vpmtt7pi" path="res://assets/Ui/Extra/table.png" id="2_xdy2b"]
+[ext_resource type="Texture2D" uid="uid://b6veqb413ajxl" path="res://assets/Ui/Extra/blue_print.png" id="3_j16kp"]
+[ext_resource type="Texture2D" uid="uid://bbiwfgat37y4d" path="res://assets/Ui/Buttons/button_fight.png" id="4_7swet"]
+[ext_resource type="Texture2D" uid="uid://sbj5qwar0r0" path="res://assets/Ui/Buttons/button_fight_pressed.png" id="5_bgq1x"]
+[ext_resource type="Texture2D" uid="uid://dqvku0v25mxyy" path="res://assets/Ui/Buttons/button_equip.png" id="7_khlt2"]
+[ext_resource type="Texture2D" uid="uid://cvy1eqs8yd0l4" path="res://assets/Ui/Portraits/zangbeto_portrait.png" id="7_tvb7t"]
+[ext_resource type="Texture2D" uid="uid://bcn30ret3wlwh" path="res://assets/Ui/Buttons/button_equip_pressed.png" id="8_bp70t"]
+[ext_resource type="Texture2D" uid="uid://bh2gtdoc3kh56" path="res://assets/Ui/Extra/light.png" id="9_a8y4n"]
+[ext_resource type="Texture2D" uid="uid://buwcp4nmoondb" path="res://assets/Ui/Buttons/go.png" id="11_5ssag"]
+[ext_resource type="Texture2D" uid="uid://blg0a3raadb8v" path="res://assets/Ui/Buttons/go_pressed.png" id="12_8grwf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kb1dm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr1kq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5sy7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekqlx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_scq8l"]
+texture = ExtResource("7_tvb7t")
 
 [node name="equipment_phase" type="Node2D"]
 script = ExtResource("1_jhsr2")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2303.0
+offset_bottom = 720.0
+texture = ExtResource("2_xdy2b")
+
 [node name="bg" type="Panel" parent="."]
 offset_right = 1153.0
 offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kb1dm")
 
 [node name="CHARACTER_MENU" type="Panel" parent="bg"]
 layout_mode = 0
@@ -18,12 +46,15 @@ offset_top = 359.0
 offset_right = 1141.0
 offset_bottom = 650.0
 
-[node name="ColorRect2" type="ColorRect" parent="bg/CHARACTER_MENU"]
-modulate = Color(0.662452, 0.662452, 0.662452, 1)
+[node name="ColorRect2" type="TextureRect" parent="bg/CHARACTER_MENU"]
 layout_mode = 0
-offset_top = -358.0
-offset_right = 515.0
-offset_bottom = 287.0
+offset_left = -106.0
+offset_top = -413.0
+offset_right = 1134.0
+offset_bottom = 1341.0
+rotation = -0.192223
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_j16kp")
 
 [node name="mc" parent="bg/CHARACTER_MENU" instance=ExtResource("2_q0ya3")]
 position = Vector2(251, -89)
@@ -35,6 +66,7 @@ offset_left = 6.0
 offset_top = -308.0
 offset_right = 156.0
 offset_bottom = -158.0
+text = "HEAD"
 
 [node name="armor" type="Button" parent="bg/CHARACTER_MENU"]
 layout_mode = 0
@@ -42,6 +74,7 @@ offset_left = 360.0
 offset_top = -308.0
 offset_right = 510.0
 offset_bottom = -158.0
+text = "TORSO"
 
 [node name="l_arm" type="Button" parent="bg/CHARACTER_MENU"]
 layout_mode = 0
@@ -49,6 +82,8 @@ offset_left = 6.0
 offset_top = -131.0
 offset_right = 156.0
 offset_bottom = 19.0
+text = "LEFT
+ARM"
 
 [node name="r_arm" type="Button" parent="bg/CHARACTER_MENU"]
 layout_mode = 0
@@ -56,6 +91,8 @@ offset_left = 360.0
 offset_top = -131.0
 offset_right = 510.0
 offset_bottom = 19.0
+text = "RIGHT
+ARM"
 
 [node name="l_leg" type="Button" parent="bg/CHARACTER_MENU"]
 layout_mode = 0
@@ -63,6 +100,8 @@ offset_left = 7.0
 offset_top = 51.0
 offset_right = 157.0
 offset_bottom = 201.0
+text = "LEFT
+LEG"
 
 [node name="r_leg" type="Button" parent="bg/CHARACTER_MENU"]
 layout_mode = 0
@@ -70,6 +109,8 @@ offset_left = 360.0
 offset_top = 51.0
 offset_right = 510.0
 offset_bottom = 201.0
+text = "RIGHT
+LEG"
 
 [node name="attack" type="Button" parent="bg/CHARACTER_MENU"]
 layout_mode = 0
@@ -84,27 +125,31 @@ layout_mode = 0
 offset_top = 2.0
 offset_right = 631.0
 offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qr1kq")
 
 [node name="_s" type="ScrollContainer" parent="bg/EQUIPS_MENU"]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 23.0
+offset_top = 131.0
 offset_right = 626.0
 offset_bottom = 608.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b5sy7")
 horizontal_scroll_mode = 0
 
 [node name="_e" type="GridContainer" parent="bg/EQUIPS_MENU/_s"]
 layout_mode = 2
 columns = 6
 
-[node name="go_to_boss_button" type="Button" parent="."]
+[node name="go_to_boss_button" type="TextureButton" parent="."]
 z_index = 1
-offset_left = 807.0
-offset_top = 523.0
-offset_right = 1160.0
-offset_bottom = 573.0
+offset_left = 920.0
+offset_top = 505.0
+offset_right = 1432.0
+offset_bottom = 705.0
 rotation = 0.20944
-text = "BATTLE BOARD >"
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_7swet")
+texture_pressed = ExtResource("5_bgq1x")
 
 [node name="battle_board" type="Node2D" parent="."]
 
@@ -113,65 +158,55 @@ custom_minimum_size = Vector2(1153, 650)
 offset_left = 1153.0
 offset_right = 2306.0
 offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ekqlx")
 
 [node name="FlowContainer" type="FlowContainer" parent="battle_board/bosses_board"]
 layout_mode = 0
-offset_left = 110.0
-offset_top = 120.0
-offset_right = 1015.0
-offset_bottom = 495.0
-theme_override_constants/h_separation = 89
-theme_override_constants/v_separation = 75
+offset_left = 158.0
+offset_top = 102.0
+offset_right = 1029.0
+offset_bottom = 953.0
+theme_override_constants/h_separation = 35
+theme_override_constants/v_separation = 18
 
 [node name="1" type="Button" parent="battle_board/bosses_board/FlowContainer"]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(187, 212)
 layout_mode = 2
-
-[node name="Mega-man-x-video-game-capcom-boss-png-favpng-lDbDw4Sua9cf3aFYzJu8GmaBf-removebg-preview" type="Sprite2D" parent="battle_board/bosses_board/FlowContainer/1"]
-position = Vector2(76, 70)
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_r3k51")
+theme_override_styles/normal = SubResource("StyleBoxTexture_scq8l")
 
 [node name="2" type="Button" parent="battle_board/bosses_board/FlowContainer"]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(187, 212)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_scq8l")
 
-[node name="3" type="Button" parent="battle_board/bosses_board/FlowContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-
-[node name="4" type="Button" parent="battle_board/bosses_board/FlowContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-
-[node name="5" type="Button" parent="battle_board/bosses_board/FlowContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-
-[node name="6" type="Button" parent="battle_board/bosses_board/FlowContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-
-[node name="7" type="Button" parent="battle_board/bosses_board/FlowContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-
-[node name="8" type="Button" parent="battle_board/bosses_board/FlowContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-
-[node name="back_to_equps" type="Button" parent="."]
+[node name="back_to_equps" type="TextureButton" parent="."]
 z_index = 1
-offset_left = 1173.0
-offset_top = 593.0
-offset_right = 1526.0
-offset_bottom = 643.0
+offset_left = 1193.0
+offset_top = 545.0
+offset_right = 1705.0
+offset_bottom = 745.0
 rotation = -0.191986
-text = "< INVENTORY
-"
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_khlt2")
+texture_pressed = ExtResource("8_bp70t")
+
+[node name="light" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1006, 40)
+scale = Vector2(1.315, 1.315)
+texture = ExtResource("9_a8y4n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 322)
+
+[node name="go_button" type="TextureButton" parent="."]
+offset_left = 2025.0
+offset_top = 414.0
+offset_right = 2537.0
+offset_bottom = 926.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("11_5ssag")
+texture_pressed = ExtResource("12_8grwf")
 
 [connection signal="pressed" from="bg/CHARACTER_MENU/attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="go_to_boss_button" to="." method="_on_go_to_boss_button_pressed"]
