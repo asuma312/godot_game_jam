@@ -19,37 +19,30 @@ var equipped = {
 	"r_leg":preload("res://obj/equipments/leg/zangbeto_leg_b.tscn").instantiate()
 }
 
-var default_position = Vector2(-31.368,-23.26)
-var attack_position = Vector2(-41.597,-45.063)
+@onready var r_attack_timer: Timer = $timers/r_attack_timer
+@onready var l_attack_timer: Timer = $timers/l_attack_timer
 
-var b_default_position = Vector2(23,-12)
-var b_attack_position = Vector2(6,-31)
 
 var r_arm
 var l_arm
 func _ready() -> void:
 	self.scale = Vector2(3,3)
-	r_arm = $r_arm/img
-	l_arm = $l_arm/img
-	l_arm.connect("animation_changed",_on_l_arm_animation_changed)
-	r_arm.connect("animation_changed",_on_r_arm_animation_changed)
-	
-	l_arm.connect("animation_finished",_on_l_arm_animation_finished)
-	r_arm.connect("animation_finished",_on_r_arm_animation_finished)
-		
-	r_arm.position = b_default_position
-	l_arm.position = default_position
 	_setup_bodyparts()
-
+	
+func _start_attacking():
+	l_arm = $l_arm
+	r_arm = $r_arm
+	l_arm = l_arm.get_child(0)
+	r_arm = r_arm.get_child(0)
+	l_arm.get_child(0).play("default")
+	r_arm.get_child(0).play("default")
+	if r_arm:
+		r_attack_timer.start(r_arm.attack_speed)
+	if l_arm:
+		l_attack_timer.start(l_arm.attack_speed)
 
 		
-func _attack() ->void:
-	r_arm.play("upper")
-	l_arm.play("jab")
 
-
-func _on_attack_timer_timeout() -> void:
-	_attack()
 
 
 func _on_attack_range_body_entered(body: Node2D) -> void:
@@ -77,21 +70,22 @@ func _setup_bodyparts():
 	for key in equipped:
 		if equipped[key]:
 			body_parts.append(key)
+func is_critical_hit(critical_chance) -> bool:
+	var chance = critical_chance / 100.0
+	var random_value = randi() / 4294967295.0
+	return random_value < chance
 
-func _on_l_arm_animation_changed() -> void:
-	var actual_animation = l_arm.animation
-	l_arm.position = attack_position
-
-func _on_l_arm_animation_finished() -> void:
-	pass
-
-
-
-func _on_r_arm_animation_changed() -> void:
-	print("aa")
-	var actual_animation = r_arm.animation
-	r_arm.position = b_attack_position
+func _on_r_attack_timer_timeout() -> void:
+	var r_arm: Node2D = $r_arm
+	r_arm = r_arm.get_child(0)
+	var is_critical = is_critical_hit(r_arm.critical_chance)
+	var d = r_arm.attack(is_critical)
+	main.mc._take_damage(d)
 
 
-func _on_r_arm_animation_finished() -> void:
-	pass
+func _on_l_attack_timer_timeout() -> void:
+	var l_arm: Node2D = $l_arm
+	l_arm = l_arm.get_child(0)
+	var is_critical = is_critical_hit(l_arm.critical_chance)
+	var d = l_arm.attack(is_critical)
+	main.mc._take_damage(d)

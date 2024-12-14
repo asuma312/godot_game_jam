@@ -14,14 +14,10 @@ height = 66.0
 [node name="boss" type="CharacterBody2D"]
 script = ExtResource("1_lwuur")
 
-[node name="attack_timer" type="Timer" parent="."]
-
 [node name="r_arm" type="Node2D" parent="."]
-position = Vector2(-25, 24)
+position = Vector2(-20, -4)
 
 [node name="img" parent="r_arm" instance=ExtResource("2_jwlx4")]
-position = Vector2(6, -31)
-frame_progress = 0.903516
 flip_h = true
 
 [node name="r_leg" type="Node2D" parent="."]
@@ -51,12 +47,9 @@ position = Vector2(2, 39)
 flip_h = true
 
 [node name="l_arm" type="Node2D" parent="."]
-position = Vector2(44, 21)
-rotation = -0.405486
+position = Vector2(-6, 12)
 
 [node name="img" parent="l_arm" instance=ExtResource("7_0fxr2")]
-position = Vector2(-31.3684, -23.2599)
-rotation = 0.452449
 flip_h = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
@@ -64,4 +57,11 @@ visible = false
 position = Vector2(0, 7)
 shape = SubResource("CapsuleShape2D_fmben")
 
-[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]
+[node name="timers" type="Node2D" parent="."]
+
+[node name="r_attack_timer" type="Timer" parent="timers"]
+
+[node name="l_attack_timer" type="Timer" parent="timers"]
+
+[connection signal="timeout" from="timers/r_attack_timer" to="." method="_on_r_attack_timer_timeout"]
+[connection signal="timeout" from="timers/l_attack_timer" to="." method="_on_l_attack_timer_timeout"]

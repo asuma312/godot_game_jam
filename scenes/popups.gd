@@ -16,6 +16,8 @@ func HidemItemPopUp():
 
 
 func setup_values(item):
+	if not item.get("_name"):
+		return
 	%NAME.text = item._name
 	var containers = [%ATT1, %ATT2, %ATT3,%ATT4,%ATT5]
 	for i in range(containers.size()):

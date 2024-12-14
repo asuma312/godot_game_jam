@@ -159,3 +159,4 @@ func _start_attacking():
 	mc.connect('lose_part',_on_p_body_part_loss)
 	mc.connect('no_body_parts',_on_lose_fight)
 	mc._start_attacking()
+	enemy._start_attacking()

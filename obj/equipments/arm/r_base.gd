@@ -3,7 +3,7 @@ extends AnimatedSprite2D
 var type = "r_arm"
 var hp = 30
 var attack_speed = 1
-var critical_chance = 0
+var critical_chance = 5
 var damage = 0
 var _name = "Base right arm"
 var atts = [
@@ -12,14 +12,14 @@ var atts = [
 	{"Critical chance": critical_chance},
 	{"Damage": damage}
 ]
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func attack(is_critical:bool):
-	var animation_player: AnimationPlayer = $AnimationPlayer
-
+	print("r attacking")
 	if is_critical:
 		damage *= 2
-		animation_player.play("uppercut")
+		animation_player.play("upper")
 	else:
 		animation_player.play("jab")
 

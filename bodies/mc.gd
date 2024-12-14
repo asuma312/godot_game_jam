@@ -63,6 +63,7 @@ func _on_attack_range_body_entered(body: Node2D) -> void:
 	body._take_damage(damage)
 
 func _take_damage(damage):
+	await _setup_bodyparts()
 	var choose_body_part = body_parts.pick_random()
 	var body_part = main.equipped[choose_body_part]
 	body_part.hp -= damage
