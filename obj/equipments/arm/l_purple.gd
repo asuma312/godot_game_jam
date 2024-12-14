@@ -10,7 +10,9 @@ var atts = [
 	{"HP":hp},
 	{"Attack speed": attack_speed},
 	{"Critical chance": critical_chance},
-	{"Damage": damage}
+	{"Damage": damage},
+	{"Extra":"Apply poison on hit"}
+
 ]
 var poison_stack:int = 0
 

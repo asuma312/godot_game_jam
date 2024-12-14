@@ -1,5 +1,5 @@
 extends AnimatedSprite2D
-var type = "l_arm"
+var type = "r_arm"
 var hp = 30
 var attack_speed = 0.8
 var critical_chance = 0
