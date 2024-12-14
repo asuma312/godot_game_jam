@@ -4,7 +4,7 @@ var type = "r_arm"
 var hp = 30
 var attack_speed = 1.0
 var critical_chance = 70
-var damage = 2
+var damage = 1
 var _name = "Protoeva right arm"
 var atts = [
 	{"HP":hp},
@@ -17,7 +17,7 @@ var atts = [
 func attack(is_critical:bool):
 	print("r attacking")
 	if is_critical:
-		damage *= 2
+		damage *= 4
 		play("upper")
 	else:
 		play("jab")

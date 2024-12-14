@@ -83,13 +83,15 @@ func _setup_bodyparts():
 				continue
 			var equip_atributes = equip.atts
 			for _dict in equip_atributes:
+				print("dict")
+				print(_dict)
 				var _key = _dict.keys()[0]
 				if _key == 'Damage':
-					plus_damage_array.append(equip_atributes[_key])
+					plus_damage_array.append(_dict[_key])
 				if _key == "Attack speed":
-					plus_as_array.append(equip_atributes[_key])
+					plus_as_array.append(_dict[_key])
 				if _key == 'Critical chance':
-					plus_crit_array.append(equip_atributes[_key])
+					plus_crit_array.append(_dict[_key])
 
 func sum_array_with_reduce(array: Array) -> int:
 	var total = 0

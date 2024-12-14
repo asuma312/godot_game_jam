@@ -57,17 +57,22 @@ func _on_attack_range_body_entered(body: Node2D) -> void:
 	body._take_damage(damage)
 
 func _take_damage(damage):
+	
 	var choose_body_part = body_parts.pick_random()
 	if not choose_body_part:
 		return
 	var body_part = equipped[choose_body_part]
 	body_part.hp -= damage
+	
 	if body_part.hp <= 0:
 		body_parts.erase(choose_body_part)
 		lose_part.emit(choose_body_part)
 		equipped.erase(choose_body_part)
 		return
 	took_damage.emit()
+	var hit_sound: AudioStreamPlayer = $HitSound
+	hit_sound.play()
+
 
 var plus_damage_array = []
 var plus_as_array = []

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bcor6elkhd7q3"]
+[gd_scene load_steps=24 format=3 uid="uid://bcor6elkhd7q3"]
 
 [ext_resource type="Script" path="res://scenes/equipment_phase.gd" id="1_jhsr2"]
 [ext_resource type="PackedScene" uid="uid://bub8l46idj5c3" path="res://bodies/mc.tscn" id="2_q0ya3"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://blg0a3raadb8v" path="res://assets/Ui/Buttons/go_pressed.png" id="12_8grwf"]
 [ext_resource type="Texture2D" uid="uid://cbt5irw7osnhj" path="res://assets/plates_logo/inventory_plate.png" id="16_7i6ce"]
 [ext_resource type="Texture2D" uid="uid://0m7j3y157wt" path="res://assets/plates_logo/battleboard_plate.png" id="17_w7c5s"]
+[ext_resource type="AudioStream" uid="uid://uqugcs1cuyhb" path="res://assets/audio/menu_audio.ogg" id="18_sfe56"]
+[ext_resource type="AudioStream" uid="uid://c6dcast5u2r0b" path="res://assets/audio/installing_sfx.ogg" id="19_1m6lx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kb1dm"]
 
@@ -226,6 +228,15 @@ texture = ExtResource("16_7i6ce")
 position = Vector2(1680, 49)
 scale = Vector2(0.305, 0.305)
 texture = ExtResource("17_w7c5s")
+
+[node name="background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_sfe56")
+autoplay = true
+bus = &"Soundtrack"
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_1m6lx")
+bus = &"sfx"
 
 [connection signal="pressed" from="go_to_boss_button" to="." method="_on_go_to_boss_button_pressed"]
 [connection signal="pressed" from="back_to_equps" to="." method="_on_back_to_equps_pressed"]

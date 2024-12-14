@@ -92,6 +92,8 @@ func _take_damage(damage):
 		lose_part.emit(body_part.get_parent())
 		return
 	took_damage.emit()
+	var hit_sound: AudioStreamPlayer = $HitSound
+	hit_sound.play()
 
 
 func _on_l_attack_timer_timeout() -> void:

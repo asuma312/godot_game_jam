@@ -86,6 +86,8 @@ func return_equip_to_equips_menu(_body_part):
 func _on_equips_menu_let_button():
 	var body_part = detect_body_part()
 	if body_part:
+		var sfx: AudioStreamPlayer = $sfx
+		sfx.play()
 		var _body_part:Button = body_part
 		var new_equip = Globals._dup_obj(current_equip)
 		if _body_part.get_children().size() > 0:

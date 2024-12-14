@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://eyidx8knnhal"]
+[gd_scene load_steps=14 format=3 uid="uid://eyidx8knnhal"]
 
 [ext_resource type="Script" path="res://bodies/boss_1.gd" id="1_f57xs"]
+[ext_resource type="AudioStream" uid="uid://boxiedcne6nxa" path="res://assets/audio/hit_sound.ogg" id="2_kyhwt"]
 [ext_resource type="PackedScene" uid="uid://c567omg8vfegj" path="res://obj/equipments/arm/r_purple.tscn" id="2_l0kaa"]
 [ext_resource type="Texture2D" uid="uid://ddbhe1jkdvdro" path="res://assets/purple_alien/purple_head.png" id="2_w76qh"]
 [ext_resource type="Texture2D" uid="uid://ec3812gxnops" path="res://assets/purple_alien/purple_leg_B.png" id="4_p3eot"]
@@ -32,6 +33,10 @@ height = 66.0
 
 [node name="boss" type="CharacterBody2D"]
 script = ExtResource("1_f57xs")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kyhwt")
+bus = &"sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
