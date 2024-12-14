@@ -2,8 +2,8 @@ extends AnimatedSprite2D
 
 var type = "r_arm"
 var hp = 30
-var attack_speed = 2
-var critical_chance = 20
+var attack_speed = 0.6
+var critical_chance = 40
 var damage = 3
 var _name = "Base right arm"
 var atts = [

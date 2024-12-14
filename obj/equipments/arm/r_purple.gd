@@ -23,5 +23,5 @@ func attack(is_critical:bool):
 	else:
 		play("jab")
 	
-	total_damage += poison_stack * 5
+	total_damage += poison_stack
 	return total_damage
