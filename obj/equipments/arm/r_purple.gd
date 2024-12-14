@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 var type = "r_arm"
 var hp = 30
-var attack_speed = 0.8
+var attack_speed = 1
 var critical_chance = 0
 var damage = 1
 var _name = "Purple alien left arm"
@@ -23,5 +23,5 @@ func attack(is_critical:bool):
 	else:
 		play("jab")
 	
-	total_damage += poison_stack
+	total_damage += int(poison_stack/3)+1
 	return total_damage

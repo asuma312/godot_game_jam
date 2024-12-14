@@ -2,7 +2,7 @@ extends AnimatedSprite2D
 
 var type = "l_arm"
 var hp = 30
-var attack_speed = 0.8
+var attack_speed = 1
 var critical_chance = 0
 var damage = 1
 var _name = "Purple alien left arm"

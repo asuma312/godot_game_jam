@@ -4,7 +4,7 @@ var type = "l_arm"
 var hp = 30
 var attack_speed = 0.6
 var critical_chance = 40
-var damage = 3
+var damage = 4
 var _name = "Base left arm"
 var atts = [
 	{"HP":hp},
