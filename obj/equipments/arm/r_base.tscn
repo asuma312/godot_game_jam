@@ -37,7 +37,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_xx1b0")
 }],
-"loop": true,
+"loop": false,
 "name": &"jab",
 "speed": 5.0
 }, {
@@ -71,7 +71,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_00433")
 }],
-"loop": true,
+"loop": false,
 "name": &"uppercut",
 "speed": 5.0
 }]

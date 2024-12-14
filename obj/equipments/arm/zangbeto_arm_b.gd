@@ -1,17 +1,20 @@
 extends AnimatedSprite2D
-
 var type = "r_arm"
 var hp = 30
-var attack_speed = 1
-var critical_chance = 30
-var damage = 0
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+var attack_speed = 1.0
+var critical_chance = 15
+var damage = 85
+var atts = [
+	{"HP": hp},
+	{"Attack Speed": attack_speed},
+	{"Critical Chance": critical_chance},
+	{"Damage": damage}
+]
+var _name = "Zangbeto right arm"
 
-func attack(is_critical:bool):
-	var new_damage = damage
+func attack(is_critical: bool):
+	var total_damage = damage
 	if is_critical:
-		new_damage *= 2
-		animation_player.play("upper")
-	else:
-		animation_player.play("jab")
-	return new_damage
+		total_damage *= 2
+	play("jab")
+	return total_damage

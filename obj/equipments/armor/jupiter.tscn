@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://52313v25ornb"]
+
+[ext_resource type="Texture2D" uid="uid://bfm0hr6d1eook" path="res://assets/Jupiter/jupiter_torso.png" id="1_670ax"]
+[ext_resource type="Script" path="res://obj/equipments/armor/jupiter.gd" id="2_pgqj0"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_670ax")
+script = ExtResource("2_pgqj0")

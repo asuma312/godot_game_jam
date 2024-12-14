@@ -2,9 +2,9 @@ extends AnimatedSprite2D
 
 var type = "r_arm"
 var hp = 30
-var attack_speed = 1
-var critical_chance = 5
-var damage = 0
+var attack_speed = 2
+var critical_chance = 20
+var damage = 3
 var _name = "Base right arm"
 var atts = [
 	{"HP":hp},
@@ -15,12 +15,12 @@ var atts = [
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
-func attack(is_critical:bool):
-	print("r attacking")
-	if is_critical:
-		damage *= 2
-		animation_player.play("upper")
-	else:
-		animation_player.play("jab")
 
-	return damage
+func attack(is_critical: bool):
+	var total_damage = damage
+	if is_critical:
+		total_damage *= 2.5
+		play("uppercut")
+	else:
+		play("jab")
+	return total_damage

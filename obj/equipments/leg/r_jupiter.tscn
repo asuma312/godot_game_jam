@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d06kb8l51nx8u"]
+
+[ext_resource type="Texture2D" uid="uid://bu02gjb8veo7o" path="res://assets/Jupiter/jupiter_leg.png" id="1_mtus3"]
+[ext_resource type="Script" path="res://obj/equipments/leg/r_jupiter.gd" id="2_cjfka"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_mtus3")
+script = ExtResource("2_cjfka")

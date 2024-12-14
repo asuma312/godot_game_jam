@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://c61sfhko3o8m4"]
 
 [ext_resource type="Texture2D" uid="uid://4qypsfksvmxk" path="res://assets/Purplealien/purple_head.png" id="1_oykoy"]
-[ext_resource type="Script" path="res://obj/equipments/head/base.gd" id="2_af4d3"]
+[ext_resource type="Script" path="res://obj/equipments/head/purple_head.gd" id="2_anpb6"]
 
 [node name="img" type="Sprite2D"]
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("1_oykoy")
-script = ExtResource("2_af4d3")
+script = ExtResource("2_anpb6")

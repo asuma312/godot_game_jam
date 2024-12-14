@@ -18,7 +18,7 @@ var camera_position:Vector2
 var old_camera_position:Vector2
 var is_moving_camera:bool = false
 var camera_move_speed = 8
-
+var selected_boss
 func _ready()->void:
 	_setup_equips_menu()
 	_setup_character_menu_buttons()
@@ -34,7 +34,7 @@ func _setup_boss_menu()->void:
 	
 	
 func _on_boss_button_pressed(boss_index):
-	parent._start_battle(str(boss_index))	
+	selected_boss = str(boss_index)
 
 func _process(delta: float) -> void:
 	if current_equip:
@@ -126,10 +126,13 @@ func detect_body_part():
 func _setup_character_menu()->void:
 	var equiped_dict:Dictionary = parent.equipped
 	for key in equiped_dict:
+		
 		var weapon:Node2D = equiped_dict[key]
 		if not weapon:
 			return
 		var node = character_menu.get_node(key)
+		if node.get_child(0):
+			node.remove_child(node.get_child(0))
 		node.add_child(weapon)
 func disconnect_all(sig:Signal):
 	for dict in sig.get_connections():
@@ -196,3 +199,9 @@ func move_camera_to_position(delta):
 func _on_back_to_equps_pressed() -> void:
 	camera_position = old_camera_position
 	is_moving_camera = true
+
+
+func _on_go_button_pressed() -> void:
+	if not selected_boss:
+		return
+	parent._start_battle(selected_boss)	

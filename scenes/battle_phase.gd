@@ -6,6 +6,7 @@ extends Node2D
 @onready var main = get_parent()
 
 var mc:CharacterBody2D
+var old_mc
 var enemy
 
 func _ready() -> void:
@@ -90,8 +91,13 @@ func _verify_e_body_parts():
 func _on_p_body_part_loss(body_part):
 	_update_player_life_node()
 	var p_stats_node = p_stats.get_node(str(body_part.name)+"/img")
+	var new_body_part = await Globals._dup_obj(main.equipped[str(body_part.name)])
+	var _animation_parent = battle_menu.get_node("MC_POS")
+	_animation_parent.add_child(new_body_part)
+	var _temp_body_part = _animation_parent.get_node("mc/"+str(body_part.name))
+	fall_down_animation(new_body_part,_temp_body_part.position,false)
 	p_stats_node.queue_free()
-	var battle_menu_node = battle_menu.get_node("MC_POS/mc/"+str(body_part.name)+"/img")
+	var battle_menu_node = battle_menu.get_node("MC_POS/mc/"+str(body_part.name)).get_child(0)
 	battle_menu_node.queue_free()
 	main.equipped[str(body_part.name)].queue_free()
 	main.equipped[str(body_part.name)] = null
@@ -138,6 +144,7 @@ func fall_down_animation(body_part, start_position,e=true):
 
 func _setup_units():
 	var mc_pos: Node2D = $BATTLE_MENU/MC_POS
+	old_mc = mc
 	mc = Globals._dup_obj(mc)
 	mc_pos.add_child(mc)
 	var enemy_pos: Node2D = $BATTLE_MENU/ENEMY_POS
@@ -152,10 +159,13 @@ func _on_win_fight():
 	print("won")
 	main._start_equipment()
 func _start_attacking():
+	old_mc.connect('took_damage',_update_player_life_node)
 	mc.connect('took_damage',_update_player_life_node)
 	enemy.connect('took_damage',_update_enemy_life_node)
 	enemy.connect('lose_part',_on_e_body_part_loss)
 	enemy.connect('no_body_parts',_on_win_fight)
+	old_mc.connect('lose_part',_on_p_body_part_loss)
+	old_mc.connect('no_body_parts',_on_lose_fight)
 	mc.connect('lose_part',_on_p_body_part_loss)
 	mc.connect('no_body_parts',_on_lose_fight)
 	mc._start_attacking()

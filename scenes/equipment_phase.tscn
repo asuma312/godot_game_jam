@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bcor6elkhd7q3"]
+[gd_scene load_steps=22 format=3 uid="uid://bcor6elkhd7q3"]
 
 [ext_resource type="Script" path="res://scenes/equipment_phase.gd" id="1_jhsr2"]
 [ext_resource type="PackedScene" uid="uid://bub8l46idj5c3" path="res://bodies/mc.tscn" id="2_q0ya3"]
@@ -10,9 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://dqvku0v25mxyy" path="res://assets/Ui/Buttons/button_equip.png" id="7_khlt2"]
 [ext_resource type="Texture2D" uid="uid://cvy1eqs8yd0l4" path="res://assets/Ui/Portraits/zangbeto_portrait.png" id="7_tvb7t"]
 [ext_resource type="Texture2D" uid="uid://bcn30ret3wlwh" path="res://assets/Ui/Buttons/button_equip_pressed.png" id="8_bp70t"]
-[ext_resource type="Texture2D" uid="uid://bh2gtdoc3kh56" path="res://assets/Ui/Extra/light.png" id="9_a8y4n"]
+[ext_resource type="Texture2D" uid="uid://byf0cbm0lgqeo" path="res://assets/Ui/Portraits/thor_portrait.png" id="9_nshnn"]
+[ext_resource type="Texture2D" uid="uid://dpdtuuuw4kvfu" path="res://assets/Ui/Portraits/protoeva_portrait.png" id="10_5lidc"]
 [ext_resource type="Texture2D" uid="uid://buwcp4nmoondb" path="res://assets/Ui/Buttons/go.png" id="11_5ssag"]
+[ext_resource type="Texture2D" uid="uid://c84sms2vs01om" path="res://assets/Ui/Portraits/Jupiter_portrait.png" id="11_wdq1r"]
 [ext_resource type="Texture2D" uid="uid://blg0a3raadb8v" path="res://assets/Ui/Buttons/go_pressed.png" id="12_8grwf"]
+[ext_resource type="Texture2D" uid="uid://cbt5irw7osnhj" path="res://assets/plates_logo/inventory_plate.png" id="16_7i6ce"]
+[ext_resource type="Texture2D" uid="uid://0m7j3y157wt" path="res://assets/plates_logo/battleboard_plate.png" id="17_w7c5s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kb1dm"]
 
@@ -172,22 +176,34 @@ layout_mode = 2
 icon = ExtResource("7_tvb7t")
 expand_icon = true
 
+[node name="3" type="Button" parent="battle_board/bosses_board/FlowContainer"]
+custom_minimum_size = Vector2(187, 212)
+layout_mode = 2
+icon = ExtResource("9_nshnn")
+expand_icon = true
+
+[node name="4" type="Button" parent="battle_board/bosses_board/FlowContainer"]
+custom_minimum_size = Vector2(187, 212)
+layout_mode = 2
+icon = ExtResource("10_5lidc")
+expand_icon = true
+
+[node name="5" type="Button" parent="battle_board/bosses_board/FlowContainer"]
+custom_minimum_size = Vector2(187, 212)
+layout_mode = 2
+icon = ExtResource("11_wdq1r")
+expand_icon = true
+
 [node name="back_to_equps" type="TextureButton" parent="."]
 z_index = 1
-offset_left = 1193.0
-offset_top = 545.0
-offset_right = 1705.0
-offset_bottom = 745.0
+offset_left = 1190.0
+offset_top = 594.0
+offset_right = 1702.0
+offset_bottom = 794.0
 rotation = -0.191986
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("7_khlt2")
 texture_pressed = ExtResource("8_bp70t")
-
-[node name="light" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1006, 40)
-scale = Vector2(1.315, 1.315)
-texture = ExtResource("9_a8y4n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 322)
@@ -201,5 +217,16 @@ scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("11_5ssag")
 texture_pressed = ExtResource("12_8grwf")
 
+[node name="InventoryPlate" type="Sprite2D" parent="."]
+position = Vector2(231, 55)
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("16_7i6ce")
+
+[node name="BattleboardPlate" type="Sprite2D" parent="."]
+position = Vector2(1680, 49)
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("17_w7c5s")
+
 [connection signal="pressed" from="go_to_boss_button" to="." method="_on_go_to_boss_button_pressed"]
 [connection signal="pressed" from="back_to_equps" to="." method="_on_back_to_equps_pressed"]
+[connection signal="pressed" from="go_button" to="." method="_on_go_button_pressed"]

@@ -1,17 +1,19 @@
-extends Node2D
-
+extends AnimatedSprite2D
 var type = "l_arm"
-var hp = 30
-var attack_speed = 1
-var critical_chance = 100
-var damage = 5
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-
-func attack(is_critical:bool):
-	var new_damage = damage
+var hp = 35
+var attack_speed = 1.0
+var critical_chance = 10
+var damage = 2
+var atts = [
+	{"HP": hp},
+	{"Attack Speed": attack_speed},
+	{"Critical Chance": critical_chance},
+	{"Damage": damage}
+]
+var _name = "Zangbeto left arm"
+func attack(is_critical: bool):
+	var total_damage = damage
 	if is_critical:
-		new_damage *= 2
-		animation_player.play("upper")
-	else:
-		animation_player.play("jab")
-	return damage
+		total_damage *= 2
+	play("jab")
+	return total_damage

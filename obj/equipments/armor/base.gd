@@ -1,6 +1,8 @@
 extends Node2D
 
 var type = "armor"
-var hp = 1
-var _name = "Test armor"
-var atts = []
+var hp = 40
+var _name = "Base armor"
+var atts = [
+{"HP":hp}
+]

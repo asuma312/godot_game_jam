@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://cygotclc50jcj"]
+
+[ext_resource type="Script" path="res://bodies/thor.gd" id="1_whs4p"]
+[ext_resource type="PackedScene" uid="uid://dlht0b7dbnh4q" path="res://obj/equipments/arm/r_thor.tscn" id="2_3br8d"]
+[ext_resource type="PackedScene" uid="uid://dbtr80qr25oyh" path="res://obj/equipments/leg/r_thor.tscn" id="3_fvm0d"]
+[ext_resource type="PackedScene" uid="uid://ovy8fa3arijt" path="res://obj/equipments/armor/thor.tscn" id="4_70u1x"]
+[ext_resource type="PackedScene" uid="uid://nsl4ts15ag" path="res://obj/equipments/head/thor.tscn" id="5_xgdyj"]
+[ext_resource type="PackedScene" uid="uid://dcpbjtohoasgy" path="res://obj/equipments/leg/l_thor.tscn" id="6_2sarh"]
+[ext_resource type="PackedScene" uid="uid://cq3fp5rygqgsq" path="res://obj/equipments/arm/l_thor.tscn" id="7_0ar4o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmben"]
+height = 66.0
+
+[node name="boss" type="CharacterBody2D"]
+script = ExtResource("1_whs4p")
+
+[node name="r_arm" type="Node2D" parent="."]
+position = Vector2(-20, -8)
+
+[node name="img" parent="r_arm" instance=ExtResource("2_3br8d")]
+position = Vector2(-4, 3)
+flip_h = true
+
+[node name="r_leg" type="Node2D" parent="."]
+position = Vector2(-32, -5)
+
+[node name="img" parent="r_leg" instance=ExtResource("3_fvm0d")]
+position = Vector2(24, 38)
+flip_h = true
+
+[node name="armor" type="Node2D" parent="."]
+
+[node name="img" parent="armor" instance=ExtResource("4_70u1x")]
+flip_h = true
+
+[node name="head" type="Node2D" parent="."]
+position = Vector2(-9, 9)
+
+[node name="img" parent="head" instance=ExtResource("5_xgdyj")]
+position = Vector2(4, -31)
+flip_h = true
+
+[node name="l_leg" type="Node2D" parent="."]
+position = Vector2(-4, 0)
+
+[node name="img" parent="l_leg" instance=ExtResource("6_2sarh")]
+position = Vector2(3, 36)
+flip_h = true
+
+[node name="l_arm" type="Node2D" parent="."]
+position = Vector2(-6, 7)
+
+[node name="img" parent="l_arm" instance=ExtResource("7_0ar4o")]
+position = Vector2(-8, -13)
+flip_h = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_fmben")
+
+[node name="timers" type="Node2D" parent="."]
+
+[node name="r_attack_timer" type="Timer" parent="timers"]
+
+[node name="l_attack_timer" type="Timer" parent="timers"]
+
+[node name="status_node" type="Node2D" parent="."]
+
+[connection signal="timeout" from="timers/r_attack_timer" to="." method="_on_r_attack_timer_timeout"]
+[connection signal="timeout" from="timers/l_attack_timer" to="." method="_on_l_attack_timer_timeout"]

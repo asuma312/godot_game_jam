@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ovy8fa3arijt"]
+
+[ext_resource type="Texture2D" uid="uid://df581eabubm20" path="res://assets/Thor/thor_torso.png" id="1_rh37s"]
+[ext_resource type="Script" path="res://obj/equipments/armor/thor.gd" id="2_gh6as"]
+
+[node name="img" type="Sprite2D"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_rh37s")
+script = ExtResource("2_gh6as")

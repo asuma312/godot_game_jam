@@ -15,9 +15,10 @@ height = 66.0
 script = ExtResource("1_lwuur")
 
 [node name="r_arm" type="Node2D" parent="."]
-position = Vector2(-20, -4)
+position = Vector2(-20, -8)
 
 [node name="img" parent="r_arm" instance=ExtResource("2_jwlx4")]
+position = Vector2(-1, 0)
 flip_h = true
 
 [node name="r_leg" type="Node2D" parent="."]
@@ -47,9 +48,10 @@ position = Vector2(2, 39)
 flip_h = true
 
 [node name="l_arm" type="Node2D" parent="."]
-position = Vector2(-6, 12)
+position = Vector2(-6, 7)
 
 [node name="img" parent="l_arm" instance=ExtResource("7_0fxr2")]
+position = Vector2(-6, -11)
 flip_h = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
@@ -62,6 +64,8 @@ shape = SubResource("CapsuleShape2D_fmben")
 [node name="r_attack_timer" type="Timer" parent="timers"]
 
 [node name="l_attack_timer" type="Timer" parent="timers"]
+
+[node name="status_node" type="Node2D" parent="."]
 
 [connection signal="timeout" from="timers/r_attack_timer" to="." method="_on_r_attack_timer_timeout"]
 [connection signal="timeout" from="timers/l_attack_timer" to="." method="_on_l_attack_timer_timeout"]

@@ -1,30 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://eyidx8knnhal"]
+[gd_scene load_steps=13 format=3 uid="uid://eyidx8knnhal"]
 
 [ext_resource type="Script" path="res://bodies/boss_1.gd" id="1_f57xs"]
-[ext_resource type="Texture2D" uid="uid://bihw6nrmouau" path="res://assets/Purplealien/Animations/arm/jab/purple_jab_b0000.png" id="2_rmwae"]
+[ext_resource type="PackedScene" uid="uid://c567omg8vfegj" path="res://obj/equipments/arm/r_purple.tscn" id="2_l0kaa"]
 [ext_resource type="Texture2D" uid="uid://ddbhe1jkdvdro" path="res://assets/purple_alien/purple_head.png" id="2_w76qh"]
-[ext_resource type="Texture2D" uid="uid://dgp7hcutlsdjr" path="res://assets/Purplealien/Animations/arm/jab/purple_jab_b0001.png" id="3_f4fjr"]
-[ext_resource type="Texture2D" uid="uid://00li3ct0vwme" path="res://assets/Purplealien/Animations/arm/jab/purple_jab_b0002.png" id="4_mabiw"]
 [ext_resource type="Texture2D" uid="uid://ec3812gxnops" path="res://assets/purple_alien/purple_leg_B.png" id="4_p3eot"]
 [ext_resource type="Texture2D" uid="uid://bctgi6p54ldap" path="res://assets/purple_alien/purple_torso.png" id="5_btm1y"]
-[ext_resource type="Texture2D" uid="uid://ijj2p7m27650" path="res://assets/Purplealien/Animations/arm/jab/purple_jab_b0003.png" id="5_odbhk"]
-[ext_resource type="Texture2D" uid="uid://du7c1c6w6vmyv" path="res://assets/Purplealien/Animations/arm/jab/purple_jab_b0004.png" id="6_jmcm8"]
-[ext_resource type="Texture2D" uid="uid://codpr2meks8i" path="res://assets/Purplealien/Animations/arm/jab/purple_jab_b0005.png" id="7_fktu6"]
+[ext_resource type="PackedScene" uid="uid://bulckl8cmo3ws" path="res://obj/equipments/arm/l_purple.tscn" id="7_hpycb"]
 [ext_resource type="Texture2D" uid="uid://86xt4n74ue2q" path="res://assets/purple_alien/purple_leg.png" id="7_tib51"]
-[ext_resource type="Texture2D" uid="uid://b6ftxco8iymui" path="res://assets/Purplealien/Animations/arm/jab/purple_jab_b0006.png" id="8_nxdd1"]
-[ext_resource type="Texture2D" uid="uid://dek0nvp7gbpj2" path="res://assets/Purplealien/Animations/arm/upper/purple_upper_b0000.png" id="9_dbyg6"]
-[ext_resource type="Texture2D" uid="uid://b11cp10yy5b0h" path="res://assets/Purplealien/Animations/arm/upper/purple_upper_b0001.png" id="10_7jpxb"]
-[ext_resource type="Texture2D" uid="uid://bbbqrnmam843w" path="res://assets/Purplealien/Animations/arm/upper/purple_upper_b0002.png" id="11_s2ynt"]
-[ext_resource type="Texture2D" uid="uid://yo70x24gmymm" path="res://assets/Purplealien/Animations/arm/upper/purple_upper_b0003.png" id="12_hjcnc"]
-[ext_resource type="Texture2D" uid="uid://darn8v0eo37j5" path="res://assets/Purplealien/Animations/arm/upper/purple_upper_b0004.png" id="13_bgp8k"]
-[ext_resource type="Texture2D" uid="uid://bw2or1m02xulg" path="res://assets/Purplealien/Animations/arm/jab/purple_jab0000.png" id="13_mrs3x"]
-[ext_resource type="Texture2D" uid="uid://repsadek6mu0" path="res://assets/Purplealien/Animations/arm/jab/purple_jab0001.png" id="14_7nlfh"]
-[ext_resource type="Texture2D" uid="uid://rkgb7uk52ibg" path="res://assets/Purplealien/Animations/arm/upper/purple_upper_b0005.png" id="14_nhj77"]
-[ext_resource type="Texture2D" uid="uid://dpip2f3a1d2d7" path="res://assets/Purplealien/Animations/arm/upper/purple_upper_b0006.png" id="15_7gilt"]
-[ext_resource type="Texture2D" uid="uid://baise78p6fmi6" path="res://assets/Purplealien/Animations/arm/jab/purple_jab0002.png" id="15_wucg7"]
-[ext_resource type="Texture2D" uid="uid://clmuk1ykogpk6" path="res://assets/Purplealien/Animations/arm/jab/purple_jab0003.png" id="16_ryw3n"]
-[ext_resource type="Texture2D" uid="uid://cpxjk7voqswnv" path="res://assets/Purplealien/Animations/arm/jab/purple_jab0004.png" id="17_arurc"]
-[ext_resource type="Texture2D" uid="uid://c7kiccyp7gocb" path="res://assets/Purplealien/Animations/arm/jab/purple_jab0005.png" id="18_4480l"]
 
 [sub_resource type="Animation" id="Animation_1mbdc"]
 length = 0.001
@@ -45,119 +27,6 @@ _data = {
 "upper_attack": SubResource("Animation_jomrn")
 }
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_sveu6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_rmwae")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_f4fjr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_mabiw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_odbhk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_jmcm8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_fktu6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_nxdd1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_rmwae")
-}],
-"loop": true,
-"name": &"jab",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_dbyg6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_7jpxb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_s2ynt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_hjcnc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_bgp8k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_nhj77")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_7gilt")
-}],
-"loop": true,
-"name": &"uppercut",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pyrrj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_mrs3x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_7nlfh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_wucg7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_ryw3n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_arurc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_4480l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_mrs3x")
-}],
-"loop": true,
-"name": &"jab",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_dbyg6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_7jpxb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_s2ynt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_hjcnc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_bgp8k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_nhj77")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_7gilt")
-}],
-"loop": true,
-"name": &"uppercut",
-"speed": 5.0
-}]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmben"]
 height = 66.0
 
@@ -174,20 +43,14 @@ libraries = {
 [node name="r_arm" type="Node2D" parent="."]
 position = Vector2(-25, 24)
 
-[node name="r_arm" type="AnimatedSprite2D" parent="r_arm"]
-position = Vector2(9, -34)
-rotation = 0.244346
-scale = Vector2(0.04, 0.04)
-sprite_frames = SubResource("SpriteFrames_sveu6")
-animation = &"uppercut"
-frame = 3
-frame_progress = 0.0112609
+[node name="img" parent="r_arm" instance=ExtResource("2_l0kaa")]
+position = Vector2(3, -29)
 flip_h = true
 
 [node name="r_leg" type="Node2D" parent="."]
 position = Vector2(-32, -5)
 
-[node name="PurpleLegB" type="Sprite2D" parent="r_leg"]
+[node name="img" type="Sprite2D" parent="r_leg"]
 position = Vector2(27, 39)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("4_p3eot")
@@ -195,7 +58,7 @@ flip_h = true
 
 [node name="armor" type="Node2D" parent="."]
 
-[node name="PurpleTorso" type="Sprite2D" parent="armor"]
+[node name="img" type="Sprite2D" parent="armor"]
 position = Vector2(1, 0)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("5_btm1y")
@@ -204,7 +67,7 @@ flip_h = true
 [node name="head" type="Node2D" parent="."]
 position = Vector2(-9, 9)
 
-[node name="PurpleHead" type="Sprite2D" parent="head"]
+[node name="img" type="Sprite2D" parent="head"]
 position = Vector2(5, -31)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("2_w76qh")
@@ -213,7 +76,7 @@ flip_h = true
 [node name="l_leg" type="Node2D" parent="."]
 position = Vector2(-4, 0)
 
-[node name="PurpleLeg" type="Sprite2D" parent="l_leg"]
+[node name="img" type="Sprite2D" parent="l_leg"]
 position = Vector2(3, 37)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("7_tib51")
@@ -223,13 +86,9 @@ flip_h = true
 position = Vector2(44, 21)
 rotation = -0.405486
 
-[node name="l_arm" type="AnimatedSprite2D" parent="l_arm"]
-position = Vector2(-39.7596, -44.2739)
-rotation = 0.459022
-scale = Vector2(0.04, 0.04)
-sprite_frames = SubResource("SpriteFrames_pyrrj")
-animation = &"jab"
-frame_progress = 0.460653
+[node name="img" parent="l_arm" instance=ExtResource("7_hpycb")]
+position = Vector2(-38.0517, -45.7173)
+rotation = 0.415388
 flip_h = true
 
 [node name="IK Targets" type="Node2D" parent="."]
@@ -249,6 +108,14 @@ visible = false
 position = Vector2(0, 7)
 shape = SubResource("CapsuleShape2D_fmben")
 
+[node name="timers" type="Node2D" parent="."]
+
+[node name="r_attack_timer" type="Timer" parent="timers"]
+
+[node name="l_attack_timer" type="Timer" parent="timers"]
+
+[node name="status_node" type="Node2D" parent="."]
+
 [connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]
-[connection signal="animation_changed" from="r_arm/r_arm" to="." method="_on_animated_sprite_2d_animation_changed"]
-[connection signal="animation_changed" from="l_arm/l_arm" to="." method="_on_l_arm_animation_changed"]
+[connection signal="timeout" from="timers/r_attack_timer" to="." method="_on_r_attack_timer_timeout"]
+[connection signal="timeout" from="timers/l_attack_timer" to="." method="_on_l_attack_timer_timeout"]
